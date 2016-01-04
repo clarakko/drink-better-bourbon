@@ -1,4 +1,5 @@
 require 'coveralls'
+require 'factory_girl_rails'
 Coveralls.wear!('rails')
 
 RSpec.configure do |config|
