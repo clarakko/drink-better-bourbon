@@ -2,15 +2,23 @@ require 'rails_helper'
 
 
 feature "visitor can add bourbon" do
+  bourbon = FactoryGirl.create(:bourbon)
+  # user = FactoryGirl.create(:user)
+
+  # visit bourbon_path
+
+  # click "Sign in"
+
+  # fill_in "Username" with: user.name
+  # fill_in "Password" with:
   scenario "visitor adds new bourbon successfully" do
-    bourbon = FactoryGirl.create(:bourbon)
 
     visit new_bourbon_path
 
-    fill_in "Name" with: bourbon.name
-    fill_in "Proof" with: bourbon.proof
-    fill_in "Varietal" with: bourbon.varietal
-    fill_in "Distillery" with: bourbon.distillery
+    fill_in "Name", with: "anything"
+    fill_in "Proof", with: bourbon.proof
+    fill_in "Varietal", with: bourbon.varietal
+    fill_in "Distillery", with: bourbon.distillery
 
     click_button "Add Bourbon"
 
