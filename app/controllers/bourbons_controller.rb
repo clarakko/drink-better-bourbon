@@ -1,5 +1,4 @@
 class BourbonsController < ApplicationController
-
   def index
     @bourbons = Bourbon.all.reverse
   end
