@@ -24,6 +24,7 @@ feature 'authenticated user signs out', %{
     fill_in 'Password', with: user.password
     click_button 'Sign In'
     click_link 'Sign Out'
-    expect(page).to have_content('Enjoy your bourbon responsibly, we hope to see you soon.')
+    expect(page).to have_content('Enjoy your bourbon responsibly, we hope to
+    see you soon.')
   end
 end
