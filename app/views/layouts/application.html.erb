@@ -14,7 +14,14 @@
 
   <body>
 
-    <%= yield %>
+    <%= render "layouts/header" %>
+
+    <div class="row">
+      <div class="column">
+        <%= render "layouts/flash" %>
+        <%= yield %>
+      </div>
+    </div>
 
   </body>
 </html>

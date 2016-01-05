@@ -1,0 +1,27 @@
+<div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to "Drink Better Bourbon", root_path, id: "logo" %></h1>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+      <% if current_user %>
+        <li><%= link_to "Users", "#" %></li>
+        <li class="has-dropdown">
+        <%= link_to current_user.username, '#' %>
+        <ul class="dropdown">
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </li>
+      <% else %>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+      </ul>
+
+    </section>
+  </nav>
+</div>
