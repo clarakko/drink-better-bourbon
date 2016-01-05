@@ -1,9 +1,5 @@
 class BourbonsController < ApplicationController
 
-  # def welcome
-  #   @recent_bourbons = Bourbon.last(10)
-  # end
-
   def index
     @bourbons = Bourbon.all.reverse
   end
@@ -42,10 +38,10 @@ class BourbonsController < ApplicationController
       flash[:error] = @bourbon.errors.full_messages.join(" + ")
       render :edit
     end
-
   end
 
   private
+
   def bourbon_params
     params.require(:bourbon).permit(:name, :proof, :distillery, :varietal)
   end

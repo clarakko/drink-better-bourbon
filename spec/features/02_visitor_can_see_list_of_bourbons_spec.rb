@@ -7,6 +7,7 @@ feature "The bourbon index page: " do
     expect(page).to have_content bourbon.name
     expect(page).to have_content bourbon.distillery
   end
+
   scenario "visitor clicks link for bourbon show page" do
     visit bourbons_path
     click_link bourbon.name
