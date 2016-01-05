@@ -10,7 +10,6 @@
       <!-- Right Nav Section -->
       <ul class="right">
       <% if current_user %>
-        <li><%= link_to "Users", "#" %></li>
         <li class="has-dropdown">
         <%= link_to current_user.username, '#' %>
         <ul class="dropdown">
