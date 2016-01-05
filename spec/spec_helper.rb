@@ -1,8 +1,7 @@
 require 'coveralls'
 require 'factory_girl_rails'
+require 'database_cleaner'
 Coveralls.wear!('rails')
-
-Dir[__dir__ + '/support/*.rb'].each { |file| require_relative file }
 
 RSpec.configure do |config|
 
