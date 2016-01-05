@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 feature "The bourbon add page: " do
   scenario "visitor adds new bourbon successfully" do
     visit new_bourbon_path

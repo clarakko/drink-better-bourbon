@@ -6,6 +6,8 @@ FactoryGirl.define do
     sequence(:proof) { |n| "#{n}" }
     sequence(:distillery) { |n| "Louisville Distilling Co.#{n}" }
     sequence(:varietal) { |n| "Blended#{n}" }
+  end
+end
 
 FactoryGirl.define do
   factory :user do
