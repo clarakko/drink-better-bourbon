@@ -1,3 +1,4 @@
+require 'factory_girl_rails'
 require 'coveralls'
 require 'factory_girl_rails'
 require 'database_cleaner'

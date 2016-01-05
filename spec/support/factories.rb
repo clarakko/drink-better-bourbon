@@ -6,5 +6,12 @@ FactoryGirl.define do
     sequence(:proof) { |n| "#{n}" }
     sequence(:distillery) { |n| "Louisville Distilling Co.#{n}" }
     sequence(:varietal) { |n| "Blended#{n}" }
+
+FactoryGirl.define do
+  factory :user do
+    sequence(:username) { |n| "Pablo#{n}" }
+    sequence(:email) { |n| "pablo#{n}@user.com" }
+    password 'password'
+    password_confirmation 'password'
   end
 end
