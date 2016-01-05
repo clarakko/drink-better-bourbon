@@ -1,0 +1,3 @@
+class BourbonController < ApplicationController
+
+end
