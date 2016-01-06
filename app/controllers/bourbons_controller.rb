@@ -1,6 +1,6 @@
 class BourbonsController < ApplicationController
   def index
-    @bourbons = Bourbon.all.reverse
+    @bourbons = Bourbon.page(params[:page])
   end
 
   def show
