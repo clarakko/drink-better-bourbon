@@ -1,0 +1,14 @@
+<h1>List of Bourbons</h1>
+<ul>
+<% @bourbons.each do |bourbon| %>
+  <li>
+    <%= link_to bourbon.name, bourbon_path(bourbon)%> - <%=bourbon.proof%> <%=bourbon.distillery%> - <%=bourbon.varietal%>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to "Add Bourbon", new_bourbon_path %>
+
+<%= link_to "Sign Up", new_user_registration_path %>
+
+<%= paginate @bourbons %>
