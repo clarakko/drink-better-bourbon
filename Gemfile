@@ -38,3 +38,8 @@ group :test do
   gem 'database_cleaner'
   gem 'poltergeist'
 end
+
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
+end
