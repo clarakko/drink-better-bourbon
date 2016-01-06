@@ -1,0 +1,12 @@
+$topbar-height: 4rem;
+
+nav.top-bar,
+nav.tab-bar,
+.contain-to-grid {
+  background: black;
+  height: $topbar-height;
+}
+
+.welcome-top-bar {
+  height: 10vh;
+}
