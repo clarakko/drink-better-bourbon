@@ -5,13 +5,9 @@ feature 'user creates review', %{
   As a user
   I want to add a review
 
-
   Acceptance Criteria
   [] I can add a review
   [] I cannot add a review without filling all fields
-
-
-
 } do
 
   let!(:bourbon) { FactoryGirl.create(:bourbon) }
@@ -51,5 +47,3 @@ feature 'user creates review', %{
     expect(current_path).to eq bourbon_path(bourbon)
   end
 end
-
-

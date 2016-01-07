@@ -44,6 +44,7 @@ class BourbonsController < ApplicationController
   private
 
   def bourbon_params
-    params.require(:bourbon).permit(:user, :name, :proof, :distillery, :varietal)
+    params.require(:bourbon).permit(
+      :user, :name, :proof, :distillery, :varietal)
   end
 end

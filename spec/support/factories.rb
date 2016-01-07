@@ -24,8 +24,8 @@ FactoryGirl.define do
   factory :review do
     sequence(:description) { |n| "Good Bourbon#{n}" }
     sequence(:rating) { |n| "#{n}" }
-    sequence(:bourbon_id) {|n| "#{n}"}
-    sequence(:user_id) {|n| "#{n}"}
+    sequence(:bourbon_id) { |n| "#{n}" }
+    sequence(:user_id) { |n| "#{n}" }
 
     association :bourbon, factory: :bourbon
     association :user, factory: :user

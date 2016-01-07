@@ -41,7 +41,7 @@ feature "The bourbon add page: ", %{
     expect(page).to have_content "Louisville Distilling Co."
   end
 
-  scenario "authenticated user does not provide proper information for a bourbon" do
+  scenario "authenticated user inputs incorrect info" do
     visit new_bourbon_path
     click_button "Add Bourbon"
 

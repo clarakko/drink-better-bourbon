@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   def new
     @bourbon = Bourbon.find(params[:bourbon_id])
     @user = User.find(current_user.id)
