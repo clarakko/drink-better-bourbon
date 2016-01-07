@@ -27,52 +27,45 @@
     </section>
   </nav>
 </div>
+
 <div class="row fullWidth recent-reviews">
-  <div class="column small-centered small-12 medium-8">
-    <p>
-      Lorem ipsum dolor sit amet, bonorum deleniti cu eos, his at omnis legimus.
-      Homero ubique ei vel. Ne mei assum quando, eam et ancillae sententiae
-      accommodare. Ex vis clita iisque consequuntur, his ei viris ignota, libris
-      postea nominavi mea an. Causae inermis salutandi ut sed, tota adipiscing
-      id eos, cu cibo debet has. Ei quo noster semper liberavisse, an nec esse
-      illum eruditi, cibo quaerendum mediocritatem te pro. Mei singulis
-      moderatius ex, probatus instructior in usu.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, bonorum deleniti cu eos, his at omnis legimus.
-      Homero ubique ei vel. Ne mei assum quando, eam et ancillae sententiae
-      accommodare. Ex vis clita iisque consequuntur, his ei viris ignota, libris
-      postea nominavi mea an. Causae inermis salutandi ut sed, tota adipiscing
-      id eos, cu cibo debet has. Ei quo noster semper liberavisse, an nec esse
-      illum eruditi, cibo quaerendum mediocritatem te pro. Mei singulis
-      moderatius ex, probatus instructior in usu.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, bonorum deleniti cu eos, his at omnis legimus.
-      Homero ubique ei vel. Ne mei assum quando, eam et ancillae sententiae
-      accommodare. Ex vis clita iisque consequuntur, his ei viris ignota, libris
-      postea nominavi mea an. Causae inermis salutandi ut sed, tota adipiscing
-      id eos, cu cibo debet has. Ei quo noster semper liberavisse, an nec esse
-      illum eruditi, cibo quaerendum mediocritatem te pro. Mei singulis
-      moderatius ex, probatus instructior in usu.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, bonorum deleniti cu eos, his at omnis legimus.
-      Homero ubique ei vel. Ne mei assum quando, eam et ancillae sententiae
-      accommodare. Ex vis clita iisque consequuntur, his ei viris ignota, libris
-      postea nominavi mea an. Causae inermis salutandi ut sed, tota adipiscing
-      id eos, cu cibo debet has. Ei quo noster semper liberavisse, an nec esse
-      illum eruditi, cibo quaerendum mediocritatem te pro. Mei singulis
-      moderatius ex, probatus instructior in usu.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, bonorum deleniti cu eos, his at omnis legimus.
-      Homero ubique ei vel. Ne mei assum quando, eam et ancillae sententiae
-      accommodare. Ex vis clita iisque consequuntur, his ei viris ignota, libris
-      postea nominavi mea an. Causae inermis salutandi ut sed, tota adipiscing
-      id eos, cu cibo debet has. Ei quo noster semper liberavisse, an nec esse
-      illum eruditi, cibo quaerendum mediocritatem te pro. Mei singulis
-      moderatius ex, probatus instructior in usu.
-    </p>
-  </div>
+  <!-- <div class="column"> -->
+    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+      <% @bourbons.each do |bourbon| %>
+        <li>
+          <div class="panel">
+            <div class="row">
+              <div class="column small-2">
+                <img src="http://placehold.it/40x90">
+              </div>
+              <div class="column small-10">
+                <div class="row">
+                  <%= bourbon.name %>
+                </div>
+                <div class="row">
+                  <div class="column small-4">
+                    <h3>Proof</h3>
+                    <%= bourbon.proof %>
+                  </div>
+                  <div class="column small-4">
+                    <h3>Experts</h3>
+                    <span>96</span>
+                  </div>
+                  <div class="column small-4">
+                    <h3>Users</h3>
+                    <span>94</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <p>
+                Review text goes here
+              </p>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <!-- </div> -->
 </div>
