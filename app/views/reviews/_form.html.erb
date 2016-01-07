@@ -1,0 +1,13 @@
+<%= form_for [@bourbon, @review] do |f| %>
+  <%= f.label :description%>
+  <%= f.text_field :description %>
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+
+  <% if @review.persisted? %>
+    <%= f.submit "Update Review" %>
+  <% else %>
+    <%= f.submit "Add Review", class: "button small" %>
+  <% end %>
+<% end %>
+<%= link_to 'Cancel', bourbon_path(@bourbon), class: "button small" %>

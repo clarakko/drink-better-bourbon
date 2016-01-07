@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable)
 
   validates :username, presence: true
+  has_many :reviews
 end
