@@ -1,19 +1,19 @@
 class ReviewsController < ApplicationController
   def new
     @bourbon = Bourbon.find(params[:bourbon_id])
-    @user = User.find(current_user.id)
+    @user = current_user
     @review = Review.new
   end
 
   def edit
     @bourbon = Bourbon.find(params[:bourbon_id])
-    @user = User.find(current_user.id)
+    @user = current_user
     @review = Review.find(params[:id])
   end
 
   def create
     @bourbon = Bourbon.find(params[:bourbon_id])
-    @user = User.find(current_user.id)
+    @user = current_user
     @review = Review.new(review_params)
     @review.bourbon = @bourbon
     @review.user = @user

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     root to: 'bourbons#index'
   end
-  resources :bourbons do
+  resources :bourbons, except: [:destroy] do
     resources :reviews
   end
 end
