@@ -32,7 +32,8 @@ feature 'user creates review', %{
     expect(page).not_to have_link('Add Review')
 
     visit new_bourbon_review_path(bourbon)
-    expect(page).to have_content('You need to sign in or sign up before continuing.')
+    expect(page).to have_content('You need to sign in or sign up before
+    continuing.')
   end
 
   scenario "an authenticated user adds a review" do

@@ -46,16 +46,16 @@ class BourbonsController < ApplicationController
 
   private
 
-    def bourbon_params
-      params.require(:bourbon).permit(
-        :user, :name, :proof, :distillery, :varietal)
-    end
+  def bourbon_params
+    params.require(:bourbon).permit(
+      :user, :name, :proof, :distillery, :varietal)
+  end
 
-    def authorize_user!
-      user = Bourbon.find(params[:id]).user
-      unless current_user == user
-        flash[:alert] = "You Are Not Authorized To View The Page"
-        redirect_to after_sign_in_path_for(current_user)
-      end
+  def authorize_user!
+    user = Bourbon.find(params[:id]).user
+    unless current_user == user
+      flash[:alert] = "You Are Not Authorized To View The Page"
+      redirect_to after_sign_in_path_for(current_user)
     end
+  end
 end

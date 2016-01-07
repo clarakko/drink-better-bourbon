@@ -76,7 +76,7 @@ feature "The bourbon add page: ", %{
   scenario "unathenticated malcontent tried to access new bourbon path" do
     click_link 'Sign Out'
     visit new_bourbon_path
-    expect(page).to have_content('You need to sign in or sign up before continuing.')
+    expect(page).to have_content('You need to sign in or sign up')
     expect(page).to_not have_content('New Bourbon Form')
   end
 
