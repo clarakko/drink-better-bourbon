@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foundation-rails'
 gem 'devise'
 gem 'simple_form'
+gem 'kaminari'
 
 group :development, :test do
   gem 'pry-rails'
@@ -36,4 +37,9 @@ group :test do
   gem 'coveralls', require: false
   gem 'database_cleaner'
   gem 'poltergeist'
+end
+
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
 end
