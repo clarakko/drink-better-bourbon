@@ -5,6 +5,7 @@ class BourbonsController < ApplicationController
 
   def show
     @bourbon = Bourbon.find(params[:id])
+    @reviews = @bourbon.reviews
   end
 
   def new
@@ -17,12 +18,13 @@ class BourbonsController < ApplicationController
 
   def create
     @bourbon = Bourbon.new(bourbon_params)
+    @bourbon.user = current_user
 
     if @bourbon.save
       flash[:notice] = "Bourbon added successfully"
       redirect_to bourbon_path(@bourbon)
     else
-      flash[:errors] = @bourbon.errors.full_messages.join(" + ")
+      flash.now[:errors] = @bourbon.errors.full_messages.join(". ")
       render :new
     end
   end
@@ -34,7 +36,7 @@ class BourbonsController < ApplicationController
       flash[:notice] = 'Bourbon updated successfully'
       redirect_to bourbon_path(@bourbon)
     else
-      flash[:error] = @bourbon.errors.full_messages.join(" + ")
+      flash.now[:error] = @bourbon.errors.full_messages.join(". ")
       render :edit
     end
   end
@@ -42,6 +44,7 @@ class BourbonsController < ApplicationController
   private
 
   def bourbon_params
-    params.require(:bourbon).permit(:name, :proof, :distillery, :varietal)
+    params.require(:bourbon).permit(
+      :user, :name, :proof, :distillery, :varietal)
   end
 end
