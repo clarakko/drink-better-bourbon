@@ -6,6 +6,7 @@ class BourbonsController < ApplicationController
   def show
     @bourbon = Bourbon.find(params[:id])
     @reviews = @bourbon.reviews
+    @vote_total = Vote.group(:review_id).sum(:vote)
   end
 
   def new

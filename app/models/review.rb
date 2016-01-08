@@ -1,6 +1,7 @@
 class Review < ActiveRecord::Base
   belongs_to :bourbon
   belongs_to :user
+  has_many :votes
 
   validates :user_id, uniqueness: { scope: :bourbon_id }
   validates :description, presence: true
