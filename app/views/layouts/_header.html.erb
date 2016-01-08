@@ -1,27 +1,30 @@
-<div class="fixed">
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><%= link_to "Drink Better Bourbon", root_path, id: "logo" %></h1>
-      </li>
-    </ul>
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">DBB</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  </ul>
 
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-      <% if current_user %>
-        <li class="has-dropdown">
-        <%= link_to current_user.username, '#' %>
-        <ul class="dropdown">
-          <li><%= link_to 'Settings', edit_user_registration_path %></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        </ul>
-      </li>
-      <% else %>
-        <li><%= link_to "Sign In", new_user_session_path %></li>
-      <% end %>
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+    <% if current_user %>
+      <li class="has-dropdown">
+      <%= link_to current_user.username, '#' %>
+      <ul class="dropdown">
+        <li><%= link_to 'Settings', edit_user_registration_path %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       </ul>
-
-    </section>
-  </nav>
-</div>
+    </li>
+    <% else %>
+      <li><%= link_to "Sign In", new_user_session_path %></li>
+    <% end %>
+    </ul>
+  </section>
+</nav>
+<!-- <div class="row fullWidth">
+  <div class="column nav-container">
+  </div>
+</div> -->

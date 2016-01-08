@@ -1,0 +1,22 @@
+<div class="landing-review border">
+  <div class="row">
+    <div class="column small-3 border">
+      <div class="image-container">
+        f
+      </div>
+    </div>
+    <div class="column small-9 border">
+      <h3><%= review.user.username %></h3>
+      <h3>For: <%= link_to review.bourbon.name, bourbon_path(review.bourbon) %></h3>
+      <h3>Rating: <%= review.rating %></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small-3">
+
+    </div>
+    <div class="column small-9">
+      <%= review.description %>
+    </div>
+  </div>
+</div>
