@@ -1,20 +1,16 @@
 require "rails_helper"
 
 feature 'user views review', %{
-
   A user or vistor
   I want to view reviews
-
 
   Acceptance Criteria
   [] I can view reviews
 
-
-
 } do
 
-  let!(:bourbon) { FactoryGirl.create(:bourbon) }
   let!(:user) { FactoryGirl.create(:user) }
+  let!(:bourbon) { FactoryGirl.create(:bourbon, user: user) }
 
   before(:each) do
     visit new_user_session_path

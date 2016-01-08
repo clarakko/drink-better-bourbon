@@ -11,13 +11,38 @@ feature "The bourbon edit page: ", %{
   [x] I see errors if update form invalid
 } do
 
-  let!(:bourbon) { FactoryGirl.create(:bourbon) }
+  let!(:user) { FactoryGirl.create(:user) }
+  let!(:bourbon) { FactoryGirl.create(:bourbon, user: user) }
+  let!(:malcontent) { FactoryGirl.create(:user) }
 
-  scenario "creator can see the edit page" do
+  before(:each) do
+    visit new_user_session_path
+    fill_in 'Username', with: user.username
+    fill_in 'Password', with: user.password
+    click_button 'Sign In'
     visit bourbon_path(bourbon)
-    click_link "Update"
+  end
 
+  scenario "only item creator can see the edit page" do
+    expect(page).to have_link "Update"
+
+    click_link "Update"
     expect(page).to have_content "Update Bourbon Form"
+
+    click_link 'Sign Out'
+    visit bourbon_path(bourbon)
+    expect(page).not_to have_link "Update"
+
+    visit new_user_session_path
+    fill_in 'Username', with: malcontent.username
+    fill_in 'Password', with: malcontent.password
+    click_button 'Sign In'
+
+    visit bourbon_path(bourbon)
+    expect(page).not_to have_link "Update"
+
+    visit edit_bourbon_path(bourbon)
+    expect(page).to have_content "You Are Not Authorized To View The Page"
   end
 
   scenario "creator validly edits the bourbon" do
@@ -33,8 +58,6 @@ feature "The bourbon edit page: ", %{
 
   scenario "creator invalidly edits bourbon" do
     visit edit_bourbon_path(bourbon)
-
-    expect(find_field("Name").value).to eq bourbon.name
 
     fill_in "Name", with: ""
     fill_in "Proof", with: ""

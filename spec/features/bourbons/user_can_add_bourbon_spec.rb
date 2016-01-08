@@ -7,7 +7,7 @@ feature "The bourbon add page: ", %{
 
   Acceptance Criteria
   [x] I am authenticated and can access the new bourbon form.
-  [] I cannot access new bourbon form if I am not authenticated
+  [X] I cannot access new bourbon form if I am not authenticated
   [x] I can create a new bourbon with valid info
   [x] I cannot create a new bourbon with invalid form info
   [x] I can only add a bourbon if it has not already been added
@@ -71,6 +71,13 @@ feature "The bourbon add page: ", %{
     click_link 'Sign Out'
     visit bourbons_path
     expect(page).to_not have_content('Add Bourbon')
+  end
+
+  scenario "unathenticated malcontent tried to access new bourbon path" do
+    click_link 'Sign Out'
+    visit new_bourbon_path
+    expect(page).to have_content('You need to sign in or sign up')
+    expect(page).to_not have_content('New Bourbon Form')
   end
 
   scenario "authenticated user cancels new bourbon submission" do
