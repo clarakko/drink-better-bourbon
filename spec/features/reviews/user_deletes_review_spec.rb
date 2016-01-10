@@ -11,8 +11,9 @@ feature 'user deletes review', %{
 
 } do
 
-  let!(:bourbon) { FactoryGirl.create(:bourbon) }
   let!(:user) { FactoryGirl.create(:user) }
+  let!(:user2) { FactoryGirl.create(:user) }
+  let!(:bourbon) { FactoryGirl.create(:bourbon, user: user) }
 
   before(:each) do
     visit new_user_session_path
@@ -21,16 +22,25 @@ feature 'user deletes review', %{
     fill_in "Password", with: user.password
     click_button "Sign In"
     visit bourbon_path(bourbon)
-  end
-
-  scenario "a user deletes a review" do
-    review = FactoryGirl.create(:review)
     click_link 'New Review'
     fill_in 'Description', with: 'Meh.'
     fill_in 'Rating', with: '42'
     click_button 'Add Review'
+  end
+
+  scenario "an authorized user can delete a review" do
     click_link "Delete"
     expect(page).to have_content('Review Wasted!')
-    expect(page).to_not have_content(review.description)
+    expect(page).to_not have_content('Meh.')
+  end
+
+  scenario "only authorized user can delete review" do
+    click_link 'Sign Out'
+    visit new_user_session_path
+    fill_in "Username", with: user2.username
+    fill_in "Password", with: user2.password
+    click_button "Sign In"
+    visit bourbon_path(bourbon)
+    expect(page).to_not have_link('Delete')
   end
 end
