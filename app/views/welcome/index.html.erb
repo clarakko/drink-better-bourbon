@@ -1,71 +1,16 @@
-<div class="row fullWidth main-picture">
-</div>
-<div class="sticky">
-  <nav class="top-bar welcome-top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><%= link_to "Drink Better Bourbon", root_path, id: "logo" %></h1>
-      </li>
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">DBB</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="right">
+      <li><a href="#">Sign In</a></li>
+      <li><a href="#">Sign Up</a></li>
+      <li><a href="#">Right Button Active</a></li>
     </ul>
-
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-      <% if current_user %>
-        <li class="has-dropdown">
-        <%= link_to current_user.username, '#' %>
-        <ul class="dropdown">
-          <li><%= link_to 'Settings', edit_user_registration_path %></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        </ul>
-      </li>
-      <% else %>
-        <li><%= link_to "Sign In", new_user_session_path %></li>
-      <% end %>
-      </ul>
-
-    </section>
-  </nav>
-</div>
-
-<div class="row fullWidth recent-reviews">
-  <!-- <div class="column"> -->
-    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-      <% @bourbons.each do |bourbon| %>
-        <li>
-          <div class="panel">
-            <div class="row">
-              <div class="column small-2">
-                <img src="http://placehold.it/40x90">
-              </div>
-              <div class="column small-10">
-                <div class="row">
-                  <%= bourbon.name %>
-                </div>
-                <div class="row">
-                  <div class="column small-4">
-                    <h3>Proof</h3>
-                    <%= bourbon.proof %>
-                  </div>
-                  <div class="column small-4">
-                    <h3>Experts</h3>
-                    <span>96</span>
-                  </div>
-                  <div class="column small-4">
-                    <h3>Users</h3>
-                    <span>94</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <p>
-                Review text goes here
-              </p>
-            </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  <!-- </div> -->
-</div>
+  </section>
+</nav>

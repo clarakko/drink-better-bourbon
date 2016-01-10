@@ -1,11 +1,15 @@
-.main-picture {
-  background-image: image-url('main-pic.jpg');
+$gold: #F8A803;
+
+body {
+  background-image: image-url('landing-page-pic.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 90vh;
+  height: 100vh;
 }
 
-.recent-reviews {
-  background-color: white;
+.top-bar {
+  height: 7vh;
+  width: 100%;
+  background-color: $gold;
 }

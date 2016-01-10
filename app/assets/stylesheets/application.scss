@@ -17,16 +17,15 @@
  */
 
  @import "foundation_and_overrides";
- @import "top_bar";
+ @import "nav";
  @import "welcome";
 
  body {
-   background-color: black;
+   background-color: #FFF;
  }
 
- .fullWidth {
+ .full-width {
    width: 100%;
-   margin-left: auto;
-   margin-right: auto;
+   margin: 0 auto;
    max-width: initial;
 }
