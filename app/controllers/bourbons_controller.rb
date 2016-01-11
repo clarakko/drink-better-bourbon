@@ -1,4 +1,7 @@
 class BourbonsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_user!, only: [:edit, :update]
+
   def index
     @bourbons = Bourbon.page(params[:page])
   end
@@ -52,5 +55,13 @@ class BourbonsController < ApplicationController
   def bourbon_params
     params.require(:bourbon).permit(
       :user, :name, :proof, :distillery, :varietal)
+  end
+
+  def authorize_user!
+    user = Bourbon.find(params[:id]).user
+    unless current_user == user
+      flash[:alert] = "You Are Not Authorized To View The Page"
+      redirect_to after_sign_in_path_for(current_user)
+    end
   end
 end
