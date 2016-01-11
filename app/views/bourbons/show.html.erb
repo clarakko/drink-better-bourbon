@@ -6,7 +6,8 @@
   <%= @bourbon.varietal %>
 </p>
 
-<% if @bourbon.user == current_user %>
+
+<% if @bourbon.user == current_user || (current_user.admin? if current_user) %>
   <%= link_to "Update", edit_bourbon_path %>
 <% end %>
 <% if current_user %>
@@ -16,10 +17,10 @@
 <% @reviews.each do |review| %>
   <li>
     <%=review.description%> - <%=review.rating%>
-    <% if review.user == current_user %>
+    <% if review.user == current_user || (current_user.admin? if current_user) %>
       -
       <%= link_to 'Update Review', edit_bourbon_review_path(@bourbon, review) %>
-      <%= link_to 'Delete', bourbon_review_path(@bourbon, review),
+      <%= button_to 'Delete', bourbon_review_path(@bourbon, review),
       method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
   </li>
