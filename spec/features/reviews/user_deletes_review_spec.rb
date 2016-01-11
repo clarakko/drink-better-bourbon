@@ -44,7 +44,6 @@ feature 'user deletes review', %{
     click_button "Sign In"
 
     visit bourbon_path(bourbon)
-    
     expect(page).to_not have_content('Delete')
   end
 end

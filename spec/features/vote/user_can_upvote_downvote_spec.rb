@@ -26,7 +26,6 @@ feature 'user votes', %{
 
   scenario "user upvotes a review" do
     visit new_user_session_path
-    
     fill_in 'Username', with: user.username
     fill_in 'Password', with: user.password
     click_button "Sign In"
@@ -63,7 +62,6 @@ feature 'user votes', %{
     expect(page).to have_content ("Vote early, vote often")
     expect(page).to_not have_content ("You've already downvoted")
   end
-
 
   scenario "user upvotes a review more than once" do
     visit new_user_session_path
