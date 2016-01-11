@@ -1,0 +1,16 @@
+<h1>Admin Update Bourbon Form</h1>
+
+<%= form_for @bourbon do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :proof %>
+  <%= f.text_field :proof %>
+  <%= f.label :distillery %>
+  <%= f.text_field :distillery %>
+  <%= f.label :varietal %>
+  <%= f.text_field :varietal %>
+
+  <%= f.submit "Update Bourbon", class: "button small" %>
+<% end %>
+
+<%= link_to 'Cancel', admin_bourbons_path, class: "button small" %>
