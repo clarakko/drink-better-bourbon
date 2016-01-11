@@ -15,7 +15,8 @@ Rails.application.routes.draw do
         post 'downvote'
       end
     end
-    
+  end
+
   namespace :admin do
     resources :users, only: [:index, :destroy]
   end
