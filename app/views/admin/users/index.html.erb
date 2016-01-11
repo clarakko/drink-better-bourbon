@@ -1,0 +1,20 @@
+<h1>Users Administration</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+      <td>
+        <%= button_to "Delete", admin_user_path(user), method: :delete, class: 'button tiny', id: "user-#{user.id}" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

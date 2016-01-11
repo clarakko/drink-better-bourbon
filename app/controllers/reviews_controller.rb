@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [
     :new, :create, :edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
+
   def new
     @bourbon = Bourbon.find(params[:bourbon_id])
     @user = current_user
@@ -60,7 +61,7 @@ class ReviewsController < ApplicationController
 
   def authorize_user!
     user = Review.find(params[:id]).user
-    unless current_user == user
+    unless current_user == user || current_user.admin?
       flash[:alert] = "You Are Not Authorized To View The Page"
       redirect_to after_sign_in_path_for(current_user)
     end

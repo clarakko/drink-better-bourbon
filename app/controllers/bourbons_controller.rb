@@ -1,6 +1,7 @@
 class BourbonsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :authorize_user!, only: [:edit, :update]
+  before_action :authorize_admin!, only: [:destroy]
 
   def index
     @bourbons = Bourbon.page(params[:page])
@@ -45,6 +46,12 @@ class BourbonsController < ApplicationController
     end
   end
 
+  def destroy
+    @bourbon = Bourbon.find(params[:id]).destroy
+    flash[:notice] = "Oh man, that bourbon is GONE DUDE."
+    redirect_to bourbons_path
+  end
+
   private
 
   def bourbon_params
@@ -54,7 +61,7 @@ class BourbonsController < ApplicationController
 
   def authorize_user!
     user = Bourbon.find(params[:id]).user
-    unless current_user == user
+    unless current_user == user || current_user.admin?
       flash[:alert] = "You Are Not Authorized To View The Page"
       redirect_to after_sign_in_path_for(current_user)
     end

@@ -1,0 +1,12 @@
+<h1>Bourbon Administration</h1>
+
+<ul>
+<% @bourbons.each do |bourbon| %>
+  <li>
+    <%= link_to bourbon.name, bourbon_path(bourbon) %>
+    <br>
+    <%= link_to "Update", edit_bourbon_path(bourbon), class: 'button small' %>
+    <%= button_to "Delete Bourbon", admin_bourbon_path(bourbon), method: :delete, class: 'button small' %>
+  </li>
+<% end %>
+</ul>
