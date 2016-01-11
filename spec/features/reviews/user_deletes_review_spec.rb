@@ -21,7 +21,9 @@ feature 'user deletes review', %{
     fill_in "Username", with: user.username
     fill_in "Password", with: user.password
     click_button "Sign In"
+
     visit bourbon_path(bourbon)
+
     click_link 'New Review'
     fill_in 'Description', with: 'Meh.'
     fill_in 'Rating', with: '42'
@@ -40,8 +42,9 @@ feature 'user deletes review', %{
     fill_in "Username", with: user2.username
     fill_in "Password", with: user2.password
     click_button "Sign In"
+
     visit bourbon_path(bourbon)
-    save_and_open_page
+    
     expect(page).to_not have_content('Delete')
   end
 end
