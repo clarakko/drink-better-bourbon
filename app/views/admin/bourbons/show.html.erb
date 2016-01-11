@@ -1,0 +1,18 @@
+<h1><%= @bourbon.name %></h1>
+
+<p>
+  <%= @bourbon.proof %>
+  <%= @bourbon.distillery %>
+  <%= @bourbon.varietal %>
+</p>
+
+<%= link_to "Update", edit_bourbon_path %>
+<%= link_to "New Review", new_bourbon_review_path(@bourbon, @review) %>
+<ul>
+<% @reviews.each do |review| %>
+  <li><%=review.description%> - <%=review.rating%> -
+  <%= link_to 'Update Review', edit_bourbon_review_path(@bourbon, review) %>
+  <%= link_to 'Delete', bourbon_review_path(@bourbon, review), method: :delete,
+  data: { confirm: 'Are you sure?' } %></li>
+<%end%>
+</ul>
