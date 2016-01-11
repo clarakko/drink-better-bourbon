@@ -16,3 +16,30 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+  $('.upvote').on('click', function(event) {
+    event.preventDefault();
+    var url = $(this).attr('href');
+    var totalVotes = $(this).parent().find('.total-votes');
+    $.ajax({
+      type: 'POST',
+      url: url,
+      dataType: 'json',
+      success: function(response) {
+        totalVotes.text(response);
+      }
+    });
+  });
+
+  $('.downvote').on('click', function(event) {
+    event.preventDefault();
+    var url = $(this).attr('href');
+    var totalVotes = $(this).parent().find('.total-votes');
+    $.ajax({
+      type: 'POST',
+      url: url,
+      dataType: 'json',
+      success: function(response) {
+        totalVotes.text(response);
+      }
+    });
+  });

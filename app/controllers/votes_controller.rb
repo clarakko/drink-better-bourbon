@@ -5,27 +5,42 @@ class VotesController < ApplicationController
   def upvote
     if @value.vote == 0 || @value.vote == -1
       @value.vote = 1
-      @value.save
-      flash[:notice] = "Upvoted!"
+
+      respond_to do |format|
+        @value.save
+        flash[:notice] = "Upvoted!"
+        @total_votes = Vote.group(:review_id).sum(:vote)
+        format.json { render json: @total_votes[@review.id] }
+      end
     elsif @value.vote == 1
       @value.vote -= 1
-      @value.save
-      flash[:notice] = "Upvote cancelled!"
+      respond_to do |format|
+        @value.save
+        flash[:notice] = "Upvote cancelled!"
+        @total_votes = Vote.group(:review_id).sum(:vote)
+        format.json { render json: @total_votes[@review.id] }
+      end
     end
-    redirect_to bourbon_path(@review.bourbon)
   end
 
   def downvote
     if @value.vote == 0 || @value.vote == 1
       @value.vote = -1
-      @value.save
-      flash[:notice] = "Downvoted!"
+      respond_to do |format|
+        @value.save
+        flash[:notice] = "Downvoted!"
+        @total_votes = Vote.group(:review_id).sum(:vote)
+        format.json { render json: @total_votes[@review.id] }
+      end
     elsif @value.vote == -1
       @value.vote += 1
-      @value.save
-      flash[:notice] = "Downvote cancelled!"
+      respond_to do |format|
+        @value.save
+        flash[:notice] = "Downvote cancelled!"
+        @total_votes = Vote.group(:review_id).sum(:vote)
+        format.json { render json: @total_votes[@review.id] }
+      end
     end
-    redirect_to bourbon_path(@review.bourbon)
   end
 
   protected
