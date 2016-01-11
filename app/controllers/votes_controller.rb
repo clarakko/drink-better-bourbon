@@ -2,24 +2,24 @@ class VotesController < ApplicationController
   before_action :pre_vote
 
   def upvote
-    if @value.vote == 1
-      @value.vote -= 1
-    else
+    if @value.vote == 0 || @value.vote == -1
       @value.vote = 1
+      @value.save
+      flash[:notice] = "Vote early, vote often"
+    elsif @value.vote == 1
+      flash[:notice] = "You've already upvoted"
     end
-    @value.save
-    flash[:notice] = "Vote early, vote often"
     redirect_to bourbon_path(@review.bourbon)
   end
 
   def downvote
-    if @value.vote == -1
-      @value.vote += 1
-    else
+    if @value.vote == 0 || @value.vote == 1
       @value.vote = -1
+      @value.save
+      flash[:notice] = "Vote early, vote often"
+    elsif @value.vote == -1
+      flash[:notice] = "You've already downvoted"
     end
-    @value.save
-    flash[:notice] = "Vote early, vote often"
     redirect_to bourbon_path(@review.bourbon)
   end
 
