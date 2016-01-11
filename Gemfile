@@ -13,7 +13,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'foundation-rails'
 gem 'devise'
-gem 'simple_form'
 gem 'kaminari'
 
 group :development, :test do
