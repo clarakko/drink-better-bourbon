@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   devise_scope :user do
     root to: 'welcome#index'
   end
-  resources :bourbons, except: [:destroy] do
+
+  resources :bourbons do
     resources :reviews
+  end
+
+  namespace :admin do
+    resources :users, only: [:index, :destroy]
   end
 end
