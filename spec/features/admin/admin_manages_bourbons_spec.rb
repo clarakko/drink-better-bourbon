@@ -8,7 +8,7 @@ feature "Admin views bourbons:", %{
   [x] I see delete option on bourbon index page if I am an admin
   [x] I can update an existing bourbon
   [x] I can destroy an existing bourbon
-}  do
+} do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:admin) { FactoryGirl.create(:user, role: 'admin') }
   let!(:bourbon) { FactoryGirl.create(:bourbon, user: user) }

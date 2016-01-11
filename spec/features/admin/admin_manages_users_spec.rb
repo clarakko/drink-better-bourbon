@@ -8,7 +8,7 @@ feature "Admin manages user:", %{
   [X] I can see an index page of users
   [X] I can see buttons to delete users
   [X] I can destroy a user
-}  do
+} do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:admin) { FactoryGirl.create(:user, role: 'admin') }
 

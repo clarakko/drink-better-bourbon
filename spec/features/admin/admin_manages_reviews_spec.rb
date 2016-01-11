@@ -7,8 +7,7 @@ feature "Admin manages user reviews:", %{
   Acceptance Criteria
   [X] I can see buttons to delete reviews on bourbon show page
   [X] I can destroy a user review
-}  do
-
+} do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:admin) { FactoryGirl.create(:user, role: 'admin') }
   let!(:bourbon) { FactoryGirl.create(:bourbon, user: user) }
