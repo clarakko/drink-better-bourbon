@@ -3,6 +3,7 @@ class Review < ActiveRecord::Base
   belongs_to :user
 
   validates :user_id, uniqueness: { scope: :bourbon_id }
+  validates :bourbon, presence: true
   validates :description, presence: true
   validates :rating, presence: true
   validates :rating, numericality: {
