@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @bourbons = Bourbon.last(5)
-    render :layout => "welcome"
+    render 'layouts/welcome'
   end
 end

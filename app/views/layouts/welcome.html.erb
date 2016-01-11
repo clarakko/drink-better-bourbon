@@ -13,10 +13,8 @@
   </head>
 
   <body>
+    <%= render "layouts/header" %>
+    <%= render "layouts/flash" %>
     <%= yield %>
-
-    <script>
-      $(document).foundation();
-    </script>
   </body>
 </html>
