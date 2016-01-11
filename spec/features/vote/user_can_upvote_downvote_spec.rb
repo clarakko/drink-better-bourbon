@@ -15,6 +15,14 @@ feature 'user votes', %{
   [x] I can downvote a review
   [x] I cannot downvote if I am not signed in
 
+
+  Acceptance Criteria
+  [x] I can cancel an upvote on a review
+
+
+  Acceptance Criteria
+  [x] I can cancel an downvote on a review
+
 } do
 
   let!(:user) { FactoryGirl.create(:user) }
@@ -92,5 +100,16 @@ feature 'user votes', %{
     click_link "Downvote"
 
     expect(page).to have_content ("Downvote cancelled!")
+  end
+
+  scenario "unauthenticated user does not see upvote" do
+    visit bourbon_path(bourbon)
+
+    expect(page).to_not have_content("Upvote")
+  end
+  scenario "unauthenticated user does not see downvote" do
+    visit bourbon_path(bourbon)
+
+    expect(page).to_not have_content("Downvote")
   end
 end
