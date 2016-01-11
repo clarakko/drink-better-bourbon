@@ -20,21 +20,21 @@
   </thead>
   <tbody>
     <% @bourbons.each do |bourbon| %>
-    <tr>
-      <td><%= link_to bourbon.name, bourbon %></td>
-      <% if current_user && current_user.admin? %>
-      <td>
-        <%= link_to 'Update', edit_bourbon_path(bourbon), class: 'button tiny' %>
-      </td>
-      <td>
-        <%= button_to 'Delete', bourbon_path(bourbon), method: :delete %>
-      </td>
-      <% end %>
-      <td><%= bourbon.proof %></td>
-      <td>92</td>
-      <td>96</td>
-      <td class="distillery"><%= bourbon.distillery %></td>
-    </tr>
+      <tr>
+        <td><%= link_to bourbon.name, bourbon %></td>
+        <% if current_user && current_user.admin? %>
+          <td>
+            <%= link_to 'Update', edit_bourbon_path(bourbon), class: 'button tiny' %>
+          </td>
+          <td>
+            <%= button_to 'Delete', bourbon_path(bourbon), method: :delete %>
+          </td>
+        <% end %>
+        <td><%= bourbon.proof %></td>
+        <td>92</td>
+        <td>96</td>
+        <td class="distillery"><%= bourbon.distillery %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
