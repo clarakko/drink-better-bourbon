@@ -10,7 +10,6 @@ feature "Admin views bourbons: ", %{
   [x] I can update an existing bourbon
   [x] I can destroy an existing bourbon
 }  do
-
   let!(:user) { FactoryGirl.create(:user) }
   let!(:admin) { FactoryGirl.create(:user, role: 'admin') }
   let!(:bourbon) { FactoryGirl.create(:bourbon, user: user) }

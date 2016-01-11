@@ -11,5 +11,4 @@ class Admin::UsersController < ApplicationController
     flash[:notice] = "Oh my Gawd that dude was annoying!"
     redirect_to admin_users_path
   end
-
 end
