@@ -20,9 +20,6 @@ feature 'user votes', %{
   let!(:user) { FactoryGirl.create(:user) }
   let!(:bourbon) { FactoryGirl.create(:bourbon) }
   let!(:review) { FactoryGirl.create(:review) }
-  let!(:review1) { FactoryGirl.create(:review) }
-  let!(:review2) { FactoryGirl.create(:review) }
-  let!(:review3) { FactoryGirl.create(:review) }
 
   scenario "user upvotes a review" do
     visit new_user_session_path
@@ -38,9 +35,7 @@ feature 'user votes', %{
     click_button "Add Review"
     click_link "Upvote"
 
-    expect(page).to have_content ("1")
-    expect(page).to have_content ("Vote early, vote often")
-    expect(page).to_not have_content ("You've already upvoted")
+    expect(page).to have_content ("Upvoted!")
   end
 
   scenario "user downvotes a review" do
@@ -53,17 +48,15 @@ feature 'user votes', %{
     visit bourbon_path(bourbon)
 
     click_link "New Review"
-    fill_in "Description", with: review1.description
-    fill_in "Rating", with: review1.rating
+    fill_in "Description", with: review.description
+    fill_in "Rating", with: review.rating
     click_button "Add Review"
     click_link "Downvote"
 
-    expect(page).to have_content ("-1")
-    expect(page).to have_content ("Vote early, vote often")
-    expect(page).to_not have_content ("You've already downvoted")
+    expect(page).to have_content ("Downvoted!")
   end
 
-  scenario "user upvotes a review more than once" do
+  scenario "user cancels upvote" do
     visit new_user_session_path
 
     fill_in 'Username', with: user.username
@@ -73,18 +66,16 @@ feature 'user votes', %{
     visit bourbon_path(bourbon)
 
     click_link "New Review"
-    fill_in "Description", with: review2.description
-    fill_in "Rating", with: review2.rating
+    fill_in "Description", with: review.description
+    fill_in "Rating", with: review.rating
     click_button "Add Review"
     click_link "Upvote"
     click_link "Upvote"
 
-    expect(page).to have_content ("1")
-    expect(page).to have_content ("You've already upvoted")
-    expect(page).to_not have_content ("Vote early, vote often")
+    expect(page).to have_content ("Upvote cancelled!")
   end
 
-  scenario "user upvotes a review more than once" do
+  scenario "user cancels downvote" do
     visit new_user_session_path
 
     fill_in 'Username', with: user.username
@@ -94,14 +85,12 @@ feature 'user votes', %{
     visit bourbon_path(bourbon)
 
     click_link "New Review"
-    fill_in "Description", with: review3.description
-    fill_in "Rating", with: review3.rating
+    fill_in "Description", with: review.description
+    fill_in "Rating", with: review.rating
     click_button "Add Review"
     click_link "Downvote"
     click_link "Downvote"
 
-    expect(page).to have_content ("-1")
-    expect(page).to have_content ("You've already downvoted")
-    expect(page).to_not have_content ("Vote early, vote often")
+    expect(page).to have_content ("Downvote cancelled!")
   end
 end

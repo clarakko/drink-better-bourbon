@@ -5,9 +5,11 @@ class VotesController < ApplicationController
     if @value.vote == 0 || @value.vote == -1
       @value.vote = 1
       @value.save
-      flash[:notice] = "Vote early, vote often"
+      flash[:notice] = "Upvoted!"
     elsif @value.vote == 1
-      flash[:notice] = "You've already upvoted"
+      @value.vote -= 1
+      @value.save
+      flash[:notice] = "Upvote cancelled!"
     end
     redirect_to bourbon_path(@review.bourbon)
   end
@@ -16,9 +18,11 @@ class VotesController < ApplicationController
     if @value.vote == 0 || @value.vote == 1
       @value.vote = -1
       @value.save
-      flash[:notice] = "Vote early, vote often"
+      flash[:notice] = "Downvoted!"
     elsif @value.vote == -1
-      flash[:notice] = "You've already downvoted"
+      @value.vote += 1
+      @value.save
+      flash[:notice] = "Downvote cancelled!"
     end
     redirect_to bourbon_path(@review.bourbon)
   end
