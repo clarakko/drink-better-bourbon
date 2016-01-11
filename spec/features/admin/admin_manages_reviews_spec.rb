@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Admin manages user reviews: ", %{
+feature "Admin manages user reviews:", %{
   As an admin
   I want to manage user reviews of bourbons
   So that I can remove inappropriate reviews

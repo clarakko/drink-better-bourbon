@@ -1,10 +1,9 @@
 require 'rails_helper'
 
-feature "Admin views bourbons: ", %{
+feature "Admin views bourbons:", %{
   As an admin
   I want to manage bourbons
   So that I can update or remove inapprpriate submissions
-
   Acceptance Criteria
   [x] I see delete option on bourbon index page if I am an admin
   [x] I can update an existing bourbon

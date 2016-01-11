@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Admin manages user: ", %{
+feature "Admin manages user:", %{
   As an admin
   I want to delete users
   So that I can remove inappropriate users
