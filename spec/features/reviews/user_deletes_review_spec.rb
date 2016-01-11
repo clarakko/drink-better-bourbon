@@ -41,6 +41,7 @@ feature 'user deletes review', %{
     fill_in "Password", with: user2.password
     click_button "Sign In"
     visit bourbon_path(bourbon)
-    expect(page).to_not have_link('Delete')
+    save_and_open_page
+    expect(page).to_not have_content('Delete')
   end
 end
