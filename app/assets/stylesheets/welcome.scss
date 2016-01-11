@@ -8,8 +8,40 @@ body {
   height: 100vh;
 }
 
-.top-bar {
-  height: 7vh;
-  width: 100%;
-  background-color: $gold;
+.search-field {
+  position: relative;
+  margin: 0 auto;
+  top: 38vh;
+}
+
+input[type="search"] {
+  border-radius: 15px;
+  border: 4px solid #fff;
+  background-color: rgba(0,0,0,0);
+}
+
+.tag-line {
+  color: $gold;
+  font-size: 1.5rem;
+  text-align: center;
+  position: relative;
+  top: 70vh;
+}
+
+@media (min-width: 40.063em) and (max-width: 64em) {
+  .tag-line {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 64.063em) and (max-width: 90em) {
+  .tag-line {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 90.063em) {
+  .tag-line {
+    font-size: 3.5rem;
+  }
 }
