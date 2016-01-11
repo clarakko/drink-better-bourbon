@@ -6,16 +6,20 @@
   <%= @bourbon.varietal %>
 </p>
 
-<%= link_to "Update", edit_bourbon_path %>
-<%= link_to "New Review", new_bourbon_review_path(@bourbon, @review) %>
+<% if @bourbon.user == current_user %>
+  <%= link_to "Update", edit_bourbon_path %>
+<% end %>
+<% if current_user %>
+  <%= link_to "New Review", new_bourbon_review_path(@bourbon, @review) %>
+<% end %>
 <ul>
-<% @reviews.each do |review| %>
-    <li><%= @vote_total[review.id] %></li>
-    <li><%= link_to "Upvote", upvote_review_votes_path(review), method: :post %></li>
-    <li><%= link_to "Downvote", downvote_review_votes_path(review), method: :post %></li>
-  <li><%=review.description%> - <%=review.rating%> -
-  <%= link_to 'Update Review', edit_bourbon_review_path(@bourbon, review) %>
-  <%= link_to 'Delete', bourbon_review_path(@bourbon, review), method: :delete,
-  data: { confirm: 'Are you sure?' } %></li>
-<%end%>
+  <% @reviews.each do |review| %>
+      <li><%= @vote_total[review.id] %></li>
+      <li><%= link_to "Upvote", upvote_review_votes_path(review), method: :post %></li>
+      <li><%= link_to "Downvote", downvote_review_votes_path(review), method: :post %></li>
+    <li><%=review.description%> - <%=review.rating%> -
+    <%= link_to 'Update Review', edit_bourbon_review_path(@bourbon, review) %>
+    <%= link_to 'Delete', bourbon_review_path(@bourbon, review), method: :delete,
+    data: { confirm: 'Are you sure?' } %></li>
+  <%end%>
 </ul>
