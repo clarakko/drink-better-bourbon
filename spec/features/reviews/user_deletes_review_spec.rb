@@ -29,7 +29,7 @@ feature 'user deletes review', %{
   end
 
   scenario "an authorized user can delete a review" do
-    click_link "Delete"
+    click_button "Delete"
     expect(page).to have_content('Review Wasted!')
     expect(page).to_not have_content('Meh.')
   end

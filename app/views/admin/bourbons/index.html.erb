@@ -5,7 +5,8 @@
   <li>
     <%= link_to bourbon.name, bourbon_path(bourbon) %>
     <br>
-    <%= button_to "Delete Bourbon", admin_bourbon_path(bourbon), method: :delete %>
+    <%= link_to "Update", edit_bourbon_path(bourbon), class: 'button small' %>
+    <%= button_to "Delete Bourbon", admin_bourbon_path(bourbon), method: :delete, class: 'button small' %>
   </li>
 <% end %>
 </ul>
