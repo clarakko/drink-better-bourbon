@@ -4,7 +4,6 @@ feature "Admin manages user:", %{
   As an admin
   I want to delete users
   So that I can remove inappropriate users
-
   Acceptance Criteria
   [X] I can see an index page of users
   [X] I can see buttons to delete users

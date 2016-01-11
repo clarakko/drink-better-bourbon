@@ -4,7 +4,6 @@ feature "Admin manages user reviews:", %{
   As an admin
   I want to manage user reviews of bourbons
   So that I can remove inappropriate reviews
-
   Acceptance Criteria
   [X] I can see buttons to delete reviews on bourbon show page
   [X] I can destroy a user review
