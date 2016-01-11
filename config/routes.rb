@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root to: 'bourbons#index'
   end
 
-  resources :bourbons do
+  resources :bourbons, except: [:destroy] do
     resources :reviews
   end
 

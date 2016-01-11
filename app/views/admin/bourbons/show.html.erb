@@ -12,7 +12,7 @@
 <% @reviews.each do |review| %>
   <li><%=review.description%> - <%=review.rating%> -
   <%= link_to 'Update Review', edit_bourbon_review_path(@bourbon, review) %>
-  <%= link_to 'Delete', bourbon_review_path(@bourbon, review), method: :delete,
+  <%= link_to 'Delete', admin_review_path(@bourbon, review), method: :delete,
   data: { confirm: 'Are you sure?' } %></li>
 <%end%>
 </ul>

@@ -44,12 +44,6 @@ class BourbonsController < ApplicationController
     end
   end
 
-  def destroy
-    @bourbon = Bourbon.find(params[:id]).destroy
-    flash[:notice] = "Oh man, that bourbon is GONE DUDE."
-    redirect_to bourbons_path
-  end
-
   private
 
   def bourbon_params
