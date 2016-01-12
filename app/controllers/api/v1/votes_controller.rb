@@ -6,10 +6,6 @@ class Api::V1::VotesController < ActionController::Base
     (value.vote == 0 || value.vote == -1) ? value.vote = 1 : value.vote -= 1
     value.save
     total_votes = Vote.group(:review_id).sum(:vote)
-    # respond_to do |format|
-    #   format.json { render json: total_votes[review.id] }
-    # end
-    # render json: total_votes[review.id], status: :updated, location: bourbon_path(review.bourbon)
     render json: total_votes[review.id]
   end
 
