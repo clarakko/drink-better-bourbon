@@ -13,8 +13,12 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
-    <%= render "layouts/flash" %>
-    <%= yield %>
+    <div class="welcome-wrapper">
+      <nav class="top-bar" id="welcome-top-bar" data-topbar role="navigation">
+        <%= render "layouts/header" %>
+      </nav>
+      <%= render "layouts/flash" %>
+      <%= yield %>
+    </div>
   </body>
 </html>

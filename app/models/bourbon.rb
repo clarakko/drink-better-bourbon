@@ -10,4 +10,8 @@ class Bourbon < ActiveRecord::Base
     greater_than: 0,
     less_than_or_equal_to: 200 }
   validates :proof, length: { maximum: 4 }
+
+  def self.search(query)
+    where("name like ?", "%#{query}%")
+  end
 end

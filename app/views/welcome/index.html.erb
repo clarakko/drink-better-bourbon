@@ -1,8 +1,9 @@
-<div class="row small-5 medium-4 large-3 search-field">
-  <form class="" action="" method="post">
-    <input type="search" name="" placeholder="Search...">
-  </form>
-</div>
+<%= form_tag(bourbons_path, method: "get") do %>
+  <div class="row small-5 medium-4 large-3">
+    <%= text_field_tag :search, params[:search], id: "main-search-bar" , placeholder: "Search..." %>
+    <button class="search-button" type="submit">submit</button>
+  </div>
+<% end %>
 
 <h3 class="tag-line">
   Be Better. Drink Bourbon.

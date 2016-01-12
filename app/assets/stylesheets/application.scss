@@ -16,11 +16,12 @@
 
  */
 
- @import "foundation_and_overrides";
- @import "welcome";
-
  .full-width {
    width: 100%;
    margin: 0 auto;
    max-width: initial;
+}
+
+.transparent {
+  background: rgba(0,0,0,0);
 }

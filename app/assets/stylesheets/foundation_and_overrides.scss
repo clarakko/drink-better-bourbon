@@ -1403,7 +1403,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-   $topbar-bg-color: rgba(0,0,0,0);
+   $topbar-bg-color: rgba(0,0,0,1);
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1423,7 +1423,7 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: $jet;
+   $topbar-link-bg-hover: #F8A803;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: #fff;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
@@ -1436,7 +1436,7 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-   $topbar-dropdown-bg: rgba(0,0,0,0);
+// $topbar-dropdown-bg: $oil;
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 // $topbar-dropdown-link-bg: $oil;
