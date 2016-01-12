@@ -5,7 +5,7 @@
   <%= f.text_field :rating %>
 
   <% if @review.persisted? %>
-    <%= f.submit "Update Review" %>
+    <%= f.submit "Update Review", class: "button small" %>
   <% else %>
     <%= f.submit "Add Review", class: "button small" %>
   <% end %>
