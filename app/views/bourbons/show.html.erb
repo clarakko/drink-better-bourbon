@@ -16,12 +16,15 @@
 <ul>
   <% @reviews.each do |review| %>
     <div class="total-review-container">
-      <div id="vote-id">
-        <div class= 'total-votes'>
-          <li><%= @total_votes[review.id] %></li>
+      <div class= 'total-votes'>
+          <% if current_user %>
+            <li><%= link_to "Upvote", upvote_review_votes_path(review), class: "upvote", remote: true, method: :post %></li>
+            <div id="vote-<%=review.id%>">
+              <li><%= @total_votes = 0 unless @total_votes[review.id] %></li>
+            </div>
+            <li><%= link_to "Downvote", downvote_review_votes_path(review), class: "downvote", remote: true, method: :post %></li>
+          <% end %>
         </div>
-        <li><%= link_to "Upvote", upvote_review_votes_path(review), class: "upvote" %></li>
-        <li><%= link_to "Downvote", downvote_review_votes_path(review), class: "downvote" %></li>
         <li>
           <%=review.description%> - <%=review.rating%>
           <% if (current_user && review.user == current_user) || (current_user.admin? if current_user) %>
@@ -31,7 +34,6 @@
               method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         </li>
-      </div>
     </div>
   <% end %>
 </ul>

@@ -15,31 +15,95 @@
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
-  $('.upvote').on('click', function(event) {
-    event.preventDefault();
-    var url = $(this).attr('href');
-    var totalVotes = $(this).parent().find('.total-votes');
-    $.ajax({
-      type: 'POST',
-      url: url,
-      dataType: 'json',
-      success: function(response) {
-        totalVotes.text(response);
-      }
-    });
-  });
 
-  $('.downvote').on('click', function(event) {
-    event.preventDefault();
-    var url = $(this).attr('href');
-    var totalVotes = $(this).parent().find('.total-votes');
-    $.ajax({
-      type: 'POST',
-      url: url,
-      dataType: 'json',
-      success: function(response) {
-        totalVotes.text(response);
-      }
+
+// $(function(){ $(document).foundation(); });
+//   $('.upvote').on('click', function(event) {
+//     event.preventDefault();
+//     var url = $(this).attr('href');
+//     var delimeter = '/';
+//     var string = url;
+//     var splitted = string.split(delimeter);
+//     var id = splitted[2];
+//
+//     var request = $.ajax({
+//       type: 'POST',
+//       url: url,
+//       dataType: 'json',
+//       success: function(response) {
+//         $('#vote-' + id).html("<li>" + response + "</li>");
+//       }
+//     });
+//   });
+
+  // $('.downvote').on('click', function(event) {
+  //   event.preventDefault();
+  //   var url = $(this).attr('href');
+  //   var delimeter = '/';
+  //   var string = url;
+  //   var splitted = string.split(delimeter);
+  //   var id = splitted[2];
+  //   $.ajax({
+  //     type: 'POST',
+  //     url: url,
+  //     dataType: 'json',
+  //     success: function(response) {
+  //       $('#vote-' + id).html("<li>" + response + "</li>");
+  //     }
+  //   });
+  // });
+
+
+  $(function(){ $(document).foundation(); });
+
+
+    $('.upvote').on('click', function(event) {
+      event.preventDefault();
+      var urlID = $(this).attr('href');
+      var delimeter = '/';
+      var string = urlID;
+      var splitted = string.split(delimeter);
+      var id = splitted[2];
+
+      var request = $.ajax({
+        type: 'POST',
+        url: "/api/v1/votes/upvote",
+        dataType: 'json',
+        data: {
+          review: {
+            id: id
+          }
+        },
+        success: function(response) {
+          $('#vote-' + id).html("<li>" + response + "</li>");
+        }
+      });
+
+      // request.done(function(response){
+      //   $('#vote-' + id).html("<li>" + response + "</li>");
+      // });
+      return false;
     });
-  });
+
+    $('.downvote').on('click', function(event) {
+      event.preventDefault();
+      var urlID = $(this).attr('href');
+      var delimeter = '/';
+      var string = urlID;
+      var splitted = string.split(delimeter);
+      var id = splitted[2];
+      $.ajax({
+        type: 'POST',
+        url: "/api/v1/votes/downvote",
+        dataType: 'json',
+        data: {
+          review: {
+            id: id
+          }
+        },
+        success: function(response) {
+          $('#vote-' + id).html("<li>" + response + "</li>");
+        }
+      });
+      return false;
+    });
