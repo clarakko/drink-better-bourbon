@@ -14,6 +14,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foundation-rails'
 gem 'devise'
 gem 'kaminari'
+gem 'carrierwave'
+gem 'fog'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'pry-rails'
@@ -26,6 +29,7 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'teaspoon-jasmine'
+  gem 'dotenv-rails'
 end
 
 group :development do
