@@ -18,9 +18,9 @@ class ReviewsController < ApplicationController
   def create
     @bourbon = Bourbon.find(params[:bourbon_id])
     @user = current_user
-    @review = Review.new(review_params)
-    @review.bourbon = @bourbon
+    @review = @bourbon.reviews.new(review_params)
     @review.user = @user
+    @vote_total = Vote.group(:review_id).sum(:vote)
 
     if @review.save
       flash[:notice] = "Review added successfully"

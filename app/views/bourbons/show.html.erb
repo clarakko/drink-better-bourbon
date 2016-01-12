@@ -7,7 +7,7 @@
 </p>
 
 
-<% if @bourbon.user == current_user || (current_user.admin? if current_user) %>
+<% if (@bourbon.user == current_user && current_user) || (current_user.admin? if current_user) %>
   <%= link_to "Update", edit_bourbon_path %>
 <% end %>
 <% if current_user %>
@@ -15,9 +15,14 @@
 <% end %>
 <ul>
 <% @reviews.each do |review| %>
+    <li><%= @vote_total[review.id] %></li>
+    <% if current_user %>
+      <li><%= link_to "Upvote", upvote_review_votes_path(review), method: :post %></li>
+      <li><%= link_to "Downvote", downvote_review_votes_path(review), method: :post %></li>
+    <% end %>
   <li>
     <%=review.description%> - <%=review.rating%>
-    <% if review.user == current_user || (current_user.admin? if current_user) %>
+    <% if (current_user && review.user == current_user) || (current_user.admin? if current_user) %>
       -
       <%= link_to 'Update Review', edit_bourbon_review_path(@bourbon, review) %>
       <%= button_to 'Delete', bourbon_review_path(@bourbon, review),
