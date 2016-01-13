@@ -28,7 +28,6 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'byebug'
   gem 'quiet_assets'
-  gem 'teaspoon-jasmine'
   gem 'dotenv-rails'
 end
 
