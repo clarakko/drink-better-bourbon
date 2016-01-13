@@ -31,3 +31,11 @@ FactoryGirl.define do
     association :user, factory: :user
   end
 end
+
+FactoryGirl.define do
+  factory :vote do
+    vote '1'
+    association :review, factory: :review
+    association :user, factory: :user
+  end
+end

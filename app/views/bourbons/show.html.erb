@@ -14,20 +14,26 @@
   <%= link_to "New Review", new_bourbon_review_path(@bourbon, @review) %>
 <% end %>
 <ul>
-<% @reviews.each do |review| %>
-    <li><%= @vote_total[review.id] %></li>
-    <% if current_user %>
-      <li><%= link_to "Upvote", upvote_review_votes_path(review), method: :post %></li>
-      <li><%= link_to "Downvote", downvote_review_votes_path(review), method: :post %></li>
-    <% end %>
-  <li>
-    <%=review.description%> - <%=review.rating%>
-    <% if (current_user && review.user == current_user) || (current_user.admin? if current_user) %>
-      -
-      <%= link_to 'Update Review', edit_bourbon_review_path(@bourbon, review) %>
-      <%= button_to 'Delete', bourbon_review_path(@bourbon, review),
-      method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </li>
-<%end%>
+  <% @reviews.each do |review| %>
+    <div class="total-review-container">
+      <div class= 'total-votes'>
+          <% if current_user %>
+            <li><%= link_to "Upvote", upvote_review_votes_path(review), class: "upvote", remote: true, method: :post %></li>
+            <div id="vote-<%=review.id%>">
+              <li><%= @total_votes[review.id] %></li>
+            </div>
+            <li><%= link_to "Downvote", downvote_review_votes_path(review), class: "downvote", remote: true, method: :post %></li>
+          <% end %>
+        </div>
+        <li>
+          <%=review.description%> - <%=review.rating%>
+          <% if (current_user && review.user == current_user) || (current_user.admin? if current_user) %>
+            -
+            <%= link_to 'Update Review', edit_bourbon_review_path(@bourbon, review) %>
+            <%= button_to 'Delete', bourbon_review_path(@bourbon, review),
+              method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </li>
+    </div>
+  <% end %>
 </ul>
