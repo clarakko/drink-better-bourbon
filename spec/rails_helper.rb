@@ -11,7 +11,6 @@ require 'shoulda-matchers'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 
-
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 Capybara.javascript_driver = :poltergeist
@@ -23,8 +22,6 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
- # config.include(EmailSpec::Helpers)
- # config.include(EmailSpec::Matchers)
 end
 
 Shoulda::Matchers.configure do |config|

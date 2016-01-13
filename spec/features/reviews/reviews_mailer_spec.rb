@@ -1,6 +1,4 @@
-
 require 'rails_helper'
-
 
 feature 'Sends email upon review', %{
 
@@ -12,13 +10,11 @@ feature 'Sends email upon review', %{
   [] I receive an email when someone reviews my bourbon  
 
 } do
-
-let!(:bourbon) { FactoryGirl.create(:bourbon, user: user) }
-let!(:user) { FactoryGirl.create(:user) }
-let!(:user2) { FactoryGirl.create(:user) } 
+  let!(:bourbon) { FactoryGirl.create(:bourbon, user: user) }
+  let!(:user) { FactoryGirl.create(:user) }
+  let!(:user2) { FactoryGirl.create(:user) } 
   
   scenario "Email is sent someone reviews a bourbon successfully" do
-    
     visit new_user_session_path
 
     fill_in "Username", with: user2.username
@@ -26,6 +22,7 @@ let!(:user2) { FactoryGirl.create(:user) }
     click_button 'Sign In'
 
     visit bourbon_path(bourbon)
+    
     click_link 'New Review'
     fill_in 'Description', with: 'The Best Bourbon Review'
     fill_in 'Rating', with: '6'
@@ -35,5 +32,3 @@ let!(:user2) { FactoryGirl.create(:user) }
     expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 end
-
-
