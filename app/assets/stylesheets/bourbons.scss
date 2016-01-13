@@ -1,9 +1,22 @@
 $gold: #F8A803;
 $bourbon: #9C2706;
 
-.row {
-  background: red;
-  border: 1px solid green;
+.bourbons-table {
+  margin: 0 auto;
+  border-collapse: collapse;;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.controls {
+  display: flex;
+}
+
+.controls > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }
 
 .bourbons-table a {
@@ -15,11 +28,27 @@ $bourbon: #9C2706;
   display: none;
 }
 
+.add-button {
+  margin-left: auto;
+  color: #fff;
+  padding: 15px;
+  background: #000;
+}
+
+.add-button:hover {
+  background: $gold;
+  color: #fff;
+}
+
+.bourbons-search-form {
+  padding: 15px 0;
+  width: 45%;
+}
+
 #bourbons-search-bar {
-  max-width: 50%;
+  margin-bottom: 0;
   background-color: rgba(0,0,0,0);
   border: 3px solid #000;
-  color: #000;
 }
 
 #bourbons-search-bar:focus {

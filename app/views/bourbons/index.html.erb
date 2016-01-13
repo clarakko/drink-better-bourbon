@@ -1,18 +1,17 @@
-<div class="row">
-  <div class="column small-centered small-12  medium-8 large-6">
+<div class="row controls">
+  <div class="column small-centered small-12 medium-10 large-8">
     <%= form_tag bourbons_path, method: "get", class: "bourbons-search-form" do %>
       <%= text_field_tag :search, params[:search], id: "bourbons-search-bar" , placeholder: "Search..." %>
       <button class="search-button" type="submit">submit</button>
     <% end %>
-
     <% if current_user %>
-      <%= link_to "Add Bourbon", new_bourbon_path %>
+      <%= link_to "Add Bourbon", new_bourbon_path, class: "add-button" %>
     <% end %>
   </div>
 </div>
 
 <div class="row">
-  <div class="column small-centered small-12  medium-8 large-6 ">
+  <div class="column small-centered small-12 medium-10 large-8">
     <table class="bourbons-table">
       <thead>
         <tr>
