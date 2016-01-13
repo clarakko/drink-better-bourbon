@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
-    root to: 'bourbons#index'
+    root to: 'welcome#index'
   end
 
   resources :bourbons do
@@ -19,5 +19,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index, :destroy]
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :votes do
+        collection do
+          post 'upvote'
+          post 'downvote'
+        end
+      end
+    end
   end
 end

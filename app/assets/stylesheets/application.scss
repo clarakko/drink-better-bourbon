@@ -1,0 +1,53 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+ */
+
+.full-width {
+  margin: 0 auto;
+  max-width: initial;
+  width: 100%;
+}
+
+.top-bar-section ul li a {
+  font-size: 4vmin;
+}
+
+// MEDIA QUERIES
+//==============================
+
+@media (min-width: 40.063em) {
+  .distillery {
+    display: table-cell;
+  }
+}
+
+@media (min-width: 40.063em) and (max-width: 64em) {
+  .top-bar-section ul li a {
+    font-size: 3vmin;
+  }
+}
+
+@media (min-width: 64.063em) and (max-width: 90em) {
+  .top-bar-section ul li a {
+    font-size: 2.5vmin;
+  }
+}
+
+@media (min-width: 90.063em) {
+  .top-bar-section ul li a {
+    font-size: 2vmin;
+  }
+}
