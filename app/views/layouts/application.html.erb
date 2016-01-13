@@ -13,15 +13,10 @@
   </head>
 
   <body>
-
-    <%= render "layouts/header" %>
-
-    <div class="row">
-      <div class="column">
-        <%= render "layouts/flash" %>
-        <%= yield %>
-      </div>
-    </div>
-
+    <nav class="top-bar" data-topbar role="navigation">
+      <%= render "layouts/header" %>
+    </nav>
+    <%= render "layouts/flash" %>
+    <%= yield %>
   </body>
 </html>

@@ -4,7 +4,13 @@ class BourbonsController < ApplicationController
   before_action :authorize_admin!, only: [:destroy]
 
   def index
-    @bourbons = Bourbon.page(params[:page])
+    if params[:search]
+      @bourbons = Bourbon.search(params[:search]).
+        order("name").
+        page(params[:page])
+    else
+      @bourbons = Bourbon.order("name").page(params[:page])
+    end
   end
 
   def show

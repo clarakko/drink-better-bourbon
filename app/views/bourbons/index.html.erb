@@ -1,42 +1,52 @@
-<% if current_user %>
-  <%= link_to "Add Bourbon", new_bourbon_path %>
-<% end %>
-
-<%= link_to "Sign Up", new_user_registration_path %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <% if current_user && current_user.admin? %>
-      <th>Update</th>
-      <th>Delete</th>
-      <% end %>
-      <th>Proof</th>
-      <th>Expert</th>
-      <th>User</th>
-      <th class="distillery">Distillery</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @bourbons.each do |bourbon| %>
-      <tr>
-        <td><%= link_to bourbon.name, bourbon %></td>
-        <% if current_user && current_user.admin? %>
-          <td>
-            <%= link_to 'Update', edit_bourbon_path(bourbon), class: 'button tiny' %>
-          </td>
-          <td>
-            <%= button_to 'Delete', bourbon_path(bourbon), method: :delete %>
-          </td>
-        <% end %>
-        <td><%= bourbon.proof %></td>
-        <td>92</td>
-        <td>96</td>
-        <td class="distillery"><%= bourbon.distillery %></td>
-      </tr>
+<div class="row controls">
+  <div class="column small-centered small-12 medium-10 large-8">
+    <%= form_tag bourbons_path, method: "get", class: "bourbons-search-form" do %>
+      <%= text_field_tag :search, params[:search], id: "bourbons-search-bar" , placeholder: "Search..." %>
+      <button class="search-button" type="submit">submit</button>
     <% end %>
-  </tbody>
-</table>
+    <% if current_user %>
+      <%= link_to "Add Bourbon", new_bourbon_path, class: "add-button" %>
+    <% end %>
+  </div>
+</div>
 
-<%= paginate @bourbons %>
+<div class="row">
+  <div class="column small-centered small-12 medium-10 large-8">
+    <table class="bourbons-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <% if current_user && current_user.admin? %>
+          <th>Update</th>
+          <th>Delete</th>
+          <% end %>
+          <th>Proof</th>
+          <th>Expert</th>
+          <th>User</th>
+          <th class="distillery">Distillery</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bourbons.each do |bourbon| %>
+          <tr>
+            <td><%= link_to bourbon.name, bourbon %></td>
+            <% if current_user && current_user.admin? %>
+              <td>
+                <%= link_to 'Update', edit_bourbon_path(bourbon), class: 'button tiny' %>
+              </td>
+              <td>
+                <%= button_to 'Delete', bourbon_path(bourbon), method: :delete %>
+              </td>
+            <% end %>
+            <td><%= bourbon.proof %></td>
+            <td>92</td>
+            <td>96</td>
+            <td class="distillery"><%= bourbon.distillery %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @bourbons %>
+  </div>
+</div>

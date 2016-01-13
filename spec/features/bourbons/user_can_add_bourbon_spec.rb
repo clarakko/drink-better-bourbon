@@ -24,6 +24,7 @@ feature "The bourbon add page: ", %{
   end
 
   scenario "authenticated user access new bourbon form" do
+    visit bourbons_path
     click_link 'Add Bourbon'
     expect(page).to have_content('New Bourbon Form')
   end

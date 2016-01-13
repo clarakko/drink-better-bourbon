@@ -1,0 +1,46 @@
+$gold: #f8a803;
+$white: #fff;
+$black: #000;
+$black-transparent: rgba(0, 0, 0, 0);
+
+.welcome-wrapper {
+  background-image: image-url("landing-page-pic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.welcome-top-bar {
+  background: $black-transparent;
+}
+
+.welcome-search-form {
+  margin: 0 auto;
+  position: relative;
+  top: 25%;
+}
+
+.search-button {
+  display: none;
+}
+
+.tag-line {
+  color: $gold;
+  font-size: 7vmin;
+  position: relative;
+  text-align: center;
+  top: 75%;
+}
+
+#welcome-search-bar {
+  background-color: $black-transparent;
+  border: 3px solid $white;
+  border-radius: 15px;
+}
+
+#welcome-search-bar:focus {
+  background-color: $white;
+  border: 3px solid $gold;
+  color: $black;
+}

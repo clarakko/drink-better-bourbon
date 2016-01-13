@@ -2,6 +2,8 @@ require 'factory_girl_rails'
 require 'coveralls'
 require 'factory_girl_rails'
 require 'database_cleaner'
+require 'launchy'
+
 Coveralls.wear!('rails')
 
 RSpec.configure do |config|

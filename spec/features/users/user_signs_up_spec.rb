@@ -17,14 +17,14 @@ feature 'new user signs up', %{
 } do
   scenario "prospective user gets to sign up page from root path" do
     visit root_path
-    click_on "Sign Up"
-    expect(page).to have_content("Sign Up")
+    click_on "Sign In"
+    expect(page).to have_content("Sign In")
+    click_link "Sign up"
     expect(page).to have_content("Password confirmation")
   end
 
   scenario "prospective user correctly submits sign up form" do
-    visit root_path
-    click_link 'Sign Up'
+    visit new_user_registration_path
     fill_in 'Username', with: 'Johnny'
     fill_in 'Email', with: 'johnny@appleseed.com'
     fill_in 'Password', with: 'johnnygold'
@@ -32,30 +32,26 @@ feature 'new user signs up', %{
     attach_file "Profile Pic",
       "#{Rails.root}/spec/support/images/profile_pic.jpg"
     click_button 'Sign Up'
-
     expect(page).to have_content('Welcome! You are on your way to enjoying
     better bourbon.')
-    expect(page).to have_content('Sign Out')
-
+    expect(page).to have_content('Johnny')
     visit edit_user_registration_path
     expect(page).to have_css("img[src*='profile_pic.jpg']")
   end
 
   scenario 'required information is not supplied' do
-    visit root_path
-    click_link 'Sign Up'
+    visit new_user_registration_path
     click_button 'Sign Up'
     expect(page).to have_content("can't be blank")
-    expect(page).to_not have_content('Sign Out')
+    expect(page).to have_content('Sign In')
   end
 
   scenario 'password does not match confirmation' do
-    visit root_path
-    click_link 'Sign Up'
+    visit new_user_registration_path
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'morepassword'
     click_button 'Sign Up'
     expect(page).to have_content("doesn't match")
-    expect(page).to_not have_content('Sign Out')
+    expect(page).to have_content('Sign In')
   end
 end
