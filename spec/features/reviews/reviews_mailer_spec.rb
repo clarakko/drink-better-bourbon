@@ -4,16 +4,16 @@ feature 'Sends email upon review', %{
 
   As a user
   I want to get notified via email
-  when someone reviews my bourbon" 
+  when someone reviews my bourbon
 
   Acceptance Criteria
-  [] I receive an email when someone reviews my bourbon  
+  [] I receive an email when someone reviews my bourbon
 
 } do
   let!(:bourbon) { FactoryGirl.create(:bourbon, user: user) }
   let!(:user) { FactoryGirl.create(:user) }
-  let!(:user2) { FactoryGirl.create(:user) } 
-  
+  let!(:user2) { FactoryGirl.create(:user) }
+
   scenario "Email is sent someone reviews a bourbon successfully" do
     visit new_user_session_path
 
@@ -22,7 +22,7 @@ feature 'Sends email upon review', %{
     click_button 'Sign In'
 
     visit bourbon_path(bourbon)
-    
+
     click_link 'New Review'
     fill_in 'Description', with: 'The Best Bourbon Review'
     fill_in 'Rating', with: '6'
