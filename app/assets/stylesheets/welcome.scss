@@ -1,28 +1,23 @@
-$gold: #F8A803;
+$gold: #f8a803;
+$white: #fff;
+$black: #000;
+$black-transparent: rgba(0,0,0,0);
 
 .welcome-wrapper {
-  background-image: image-url('landing-page-pic.jpg');
+  background-image: image-url("landing-page-pic.jpg");
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
 }
 
 .welcome-top-bar {
-  background: rgba(0,0,0,0);
-}
-
-.top-bar-section ul li a{
-  font-size: 4vmin;
-}
-
-.top-bar ul.left {
-  margin-left: 30px;
+  background: $black-transparent
 }
 
 .welcome-search-form {
-  position: relative;
   margin: 0 auto;
+  position: relative;
   top: 25%;
 }
 
@@ -33,19 +28,19 @@ $gold: #F8A803;
 .tag-line {
   color: $gold;
   font-size: 7vmin;
-  text-align: center;
   position: relative;
+  text-align: center;
   top: 75%;
 }
 
 #welcome-search-bar {
+  background-color: $black-transparent;
+  border: 3px solid $white;
   border-radius: 15px;
-  background-color: rgba(0,0,0,0);
-  border: 3px solid #fff;
 }
 
 #welcome-search-bar:focus {
+  background-color: $white;
   border: 3px solid $gold;
-  background-color: #fff;
-  color: #000;
+  color: $black;
 }
