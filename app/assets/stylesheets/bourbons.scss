@@ -8,11 +8,10 @@ $black: #000;
   margin: 0 auto;
   margin-top: 20px;
   width: 100%;
-}
-
-.bourbons-table a {
-  color: $bourbon;
-  font-weight: bold;
+  a {
+    color: $bourbon;
+    font-weight: bold;
+  }
 }
 
 .controls,
