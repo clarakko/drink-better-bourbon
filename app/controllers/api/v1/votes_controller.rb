@@ -1,5 +1,4 @@
 class Api::V1::VotesController < ActionController::Base
-
   def upvote
     review = Review.find(params[:review][:id])
     value = Vote.find_or_initialize_by(review: review, user: current_user)
