@@ -23,6 +23,7 @@ class ReviewsController < ApplicationController
     @vote_total = Vote.group(:review_id).sum(:vote)
 
     if @review.save
+      ReviewMailer.new_review(@review).deliver_later
       flash[:notice] = "Review added successfully"
       redirect_to bourbon_path(@bourbon)
     else
