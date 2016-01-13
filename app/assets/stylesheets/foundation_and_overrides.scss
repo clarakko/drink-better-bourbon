@@ -651,7 +651,7 @@ $include-html-global-classes: $include-html-classes;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
-   $input-placeholder-font-color: none;
+$input-placeholder-font-color: none;
 // $input-bg-color: $white;
 // $input-focus-bg-color: scale-color($white, $lightness: -2%);
 // $input-border-color: scale-color($white, $lightness: -20%);
@@ -1298,19 +1298,19 @@ $include-html-global-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
 // $table-bg: $white;
-   $table-even-row-bg: scale-color($gold, $lightness: 50%);
+$table-even-row-bg: scale-color($gold, $lightness: 50%);
 
 // These control the table cell border style
 // $table-border-style: solid;
-   $table-border-size: 0px;
-   $table-border-color: #000;
+$table-border-size: 0px;
+$table-border-color: #000;
 
 // These control the table head styles
-   $table-head-bg: #000;
+$table-head-bg: #000;
 // $table-head-font-size: rem-calc(14);
-   $table-head-font-color: #fff;
+$table-head-font-color: #fff;
 // $table-head-font-weight: $font-weight-bold;
-   $table-head-padding: rem-calc(10 25 10 10);
+$table-head-padding: rem-calc(10 25 10 10);
 
 // These control the table foot styles
 // $table-foot-bg: $table-head-bg;
@@ -1326,7 +1326,7 @@ $include-html-global-classes: $include-html-classes;
 // $table-caption-font-weight: bold;
 
 // These control the row padding and font styles
-   $table-row-padding: rem-calc(19 10);
+$table-row-padding: rem-calc(19 10);
 // $table-row-font-size: rem-calc(14);
 // $table-row-font-color: $jet;
 // $table-line-height: rem-calc(18);
@@ -1405,16 +1405,16 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-   $topbar-bg-color: rgba(0,0,0,1);
+$topbar-bg-color: rgba(0, 0, 0, 1);
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-   $topbar-height: rem-calc(60);
-   $topbar-margin-bottom: 4vh;
+$topbar-height: rem-calc(60);
+$topbar-margin-bottom: 4vh;
 
 // Controlling the styles for the title in the top bar
-   $topbar-title-weight: bold;
-   $topbar-title-font-size: rem-calc(27);
+$topbar-title-weight: bold;
+$topbar-title-font-size: rem-calc(27);
 
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: $white;
@@ -1425,13 +1425,13 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-link-font-size: rem-calc(17);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-   $topbar-link-bg-hover: $gold;
+$topbar-link-bg-hover: $gold;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: #fff;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
-   $topbar-link-padding: ($topbar-height / 2);
+$topbar-link-padding: ($topbar-height / 2);
 // $topbar-back-link-size: rem-calc(20);
 // $topbar-link-dropdown-padding: rem-calc(20);
 // $topbar-button-font-size: .75rem;
@@ -1460,8 +1460,8 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-menu-link-weight: $font-weight-bold;
 // $topbar-menu-link-color: $white;
 // $topbar-menu-icon-color: $white;
-   $topbar-menu-link-color-toggled: #fff;
-   $topbar-menu-icon-color-toggled: #fff;
+$topbar-menu-link-color-toggled: #fff;
+$topbar-menu-icon-color-toggled: #fff;
 // $topbar-menu-icon-position: $opposite-direction; // Change to $default-float for a left menu icon
 
 // Transitions and breakpoint styles

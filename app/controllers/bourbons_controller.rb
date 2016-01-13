@@ -5,12 +5,11 @@ class BourbonsController < ApplicationController
 
   def index
     if params[:search]
-      @bourbons = Bourbon.search(params[:search])
-      .order("name")
-      .page(params[:page])
+      @bourbons = Bourbon.search(params[:search]).
+        order("name").
+        page(params[:page])
     else
-      @bourbons = Bourbon.order("name")
-      .page(params[:page])
+      @bourbons = Bourbon.order("name").page(params[:page])
     end
   end
 

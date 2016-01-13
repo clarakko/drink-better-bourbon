@@ -1,7 +1,7 @@
 $gold: #f8a803;
 $white: #fff;
 $black: #000;
-$black-transparent: rgba(0,0,0,0);
+$black-transparent: rgba(0, 0, 0, 0);
 
 .welcome-wrapper {
   background-image: image-url("landing-page-pic.jpg");
@@ -12,7 +12,7 @@ $black-transparent: rgba(0,0,0,0);
 }
 
 .welcome-top-bar {
-  background: $black-transparent
+  background: $black-transparent;
 }
 
 .welcome-search-form {
