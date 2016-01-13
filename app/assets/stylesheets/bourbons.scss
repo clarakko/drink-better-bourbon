@@ -4,26 +4,26 @@ $white: #fff;
 $black: #000;
 
 .bourbons-table {
+  border-collapse: collapse;
   margin: 0 auto;
-  border-collapse: collapse;;
   margin-top: 20px;
   width: 100%;
 }
 
-.controls {
+.bourbons-table a {
+  color: $bourbon;
+  font-weight: bold;
+}
+
+.controls,
+.controls > div {
   display: flex;
 }
 
 .controls > div {
-  display: flex;
   align-items: center;
-  justify-content: center;
   align-self: center;
-}
-
-.bourbons-table a {
-  font-weight: bold;
-  color: $bourbon;
+  justify-content: center;
 }
 
 .distillery {
@@ -31,10 +31,10 @@ $black: #000;
 }
 
 .add-button {
-  margin-left: auto;
-  color: $white;
-  padding: 15px;
   background: $black;
+  color: $white;
+  margin-left: auto;
+  padding: 15px;
 }
 
 .add-button:hover {
@@ -48,12 +48,12 @@ $black: #000;
 }
 
 #bourbons-search-bar {
-  margin-bottom: 0;
   border: 3px solid $black;
+  margin-bottom: 0;
 }
 
 #bourbons-search-bar:focus {
-  border: 3px solid $gold;
   background-color: $white;
+  border: 3px solid $gold;
   color: $black;
 }
