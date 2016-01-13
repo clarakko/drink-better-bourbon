@@ -1,6 +1,5 @@
 class VotesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :pre_vote
+  before_action :before
 
   def upvote
     if @value.vote == 0 || @value.vote == -1
@@ -30,7 +29,7 @@ class VotesController < ApplicationController
 
   protected
 
-  def pre_vote
+  def before
     @review = Review.find(params[:review_id])
     @value = Vote.find_or_initialize_by(review: @review, user: current_user)
   end

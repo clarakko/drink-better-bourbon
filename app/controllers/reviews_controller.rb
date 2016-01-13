@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     @user = current_user
     @review = @bourbon.reviews.new(review_params)
     @review.user = @user
-    @vote_total = Vote.group(:review_id).sum(:vote)
+    @total_votes = Vote.group(:review_id).sum(:vote)
 
     if @review.save
       flash[:notice] = "Review added successfully"
