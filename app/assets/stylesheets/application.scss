@@ -21,3 +21,30 @@
    margin: 0 auto;
    max-width: initial;
 }
+
+/* MEDIA QUERIES
+==============================*/
+
+@media (min-width: 40.063em) {
+  .distillery {
+    display: table-cell;
+  }
+}
+
+@media (min-width: 40.063em) and (max-width: 64em) {
+  .top-bar-section ul li a{
+    font-size: 3vmin;
+  }
+}
+
+@media (min-width: 64.063em) and (max-width: 90em) {
+  .top-bar-section ul li a{
+    font-size: 2.5vmin;
+  }
+}
+
+@media (min-width: 90.063em) {
+  .top-bar-section ul li a{
+    font-size: 2vmin;
+  }
+}

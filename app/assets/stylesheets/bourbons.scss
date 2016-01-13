@@ -1,0 +1,29 @@
+$gold: #F8A803;
+$bourbon: #9C2706;
+
+.row {
+  background: red;
+  border: 1px solid green;
+}
+
+.bourbons-table a {
+  font-weight: bold;
+  color: $bourbon;
+}
+
+.distillery {
+  display: none;
+}
+
+#bourbons-search-bar {
+  max-width: 50%;
+  background-color: rgba(0,0,0,0);
+  border: 3px solid #000;
+  color: #000;
+}
+
+#bourbons-search-bar:focus {
+  border: 3px solid $gold;
+  background-color: #fff;
+  color: #000;
+}
