@@ -2,6 +2,7 @@
   <li class="name">
     <h1 class="logo"><%= link_to "DBB", root_path %></h1>
   <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+
 </ul>
 
 <section class="top-bar-section">
@@ -13,16 +14,19 @@
       </script>
   </ul>
   <ul class="right">
+    <% if "#{request.fullpath}" == "/bourbons" %>
+    <% else %>
     <li class="has-form">
       <div class="row collapse">
         <div class="large-8 small-9 columns">
           <%= form_tag bourbons_path, method: "get", id: "top-bar-search", class: "row small-6 medium-4 large-3 welcome-search-form" do %>
-            <%= text_field_tag :search, params[:search], id: "welcome-search-bar", placeholder: "Search..." %>
-            <button class="search-button" type="submit">submit</button>
+            <%= text_field_tag :search, params[:search], id: "welcome-search-bar-top", placeholder: "Search..." %>
+            <button class="search-button" type="submit">go</button>
           <% end %>
         </div>
       </div>
     </li>
+    <% end %>
     <li><%= link_to "Bourbons", bourbons_path, class: "bbon" %></li>
     <% if current_user %>
       <li class="has-dropdown">

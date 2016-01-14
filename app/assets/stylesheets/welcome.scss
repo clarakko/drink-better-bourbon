@@ -33,12 +33,14 @@ $black-transparent: rgba(0, 0, 0, 0);
   top: 75%;
 }
 
-#welcome-search-bar {
+#welcome-search-bar-center,
+#welcome-search-bar-top {
   background-color: $black-transparent;
   border: 3px solid $white;
 }
 
-#welcome-search-bar:focus {
+#welcome-search-bar-center:focus,
+#welcome-search-bar-top:focus {
   background-color: $white;
   border: 3px solid $gold;
   color: $black;

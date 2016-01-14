@@ -30,7 +30,7 @@
 }
 
 .twitter-follow-button {
-  position: relative;
+  display: none;
 }
 
 .has-form {
@@ -77,7 +77,7 @@
     display: block;
   }
 
-  #welcome-search-bar {
+  #welcome-search-bar-top {
     border-radius: 0;
     width: 20vh;
   }
