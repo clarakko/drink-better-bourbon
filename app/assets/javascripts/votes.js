@@ -16,7 +16,7 @@ $(".upvote").on("click", function(event) {
       }
     },
     success: function(response) {
-      $("#vote-" + id).html("<li>" + response + "</li>");
+      $("#vote-" + id).html(response);
     }
   });
   return false;
@@ -39,7 +39,7 @@ $(".downvote").on("click", function(event) {
       }
     },
     success: function(response) {
-      $("#vote-" + id).html("<li>" + response + "</li>");
+      $("#vote-" + id).html(response);
     }
   });
   return false;

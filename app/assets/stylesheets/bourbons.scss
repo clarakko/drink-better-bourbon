@@ -2,17 +2,20 @@ $gold: #f8a803;
 $bourbon: #9c2706;
 $white: #fff;
 $black: #000;
+$black-transparent: rgba(0, 0, 0, 0);
+
+//INDEX PAGE
+//==============================
+
+.bourbons-wrapper {
+  margin-top: 20px;
+}
 
 .bourbons-table {
   border-collapse: collapse;
   margin: 0 auto;
   margin-top: 20px;
   width: 100%;
-  
-  a {
-    color: $bourbon;
-    font-weight: bold;
-  }
 }
 
 .controls,
@@ -30,14 +33,19 @@ $black: #000;
   display: none;
 }
 
-.add-button {
+.add-button,
+.new-review-button {
   background: $black;
   color: $white;
-  margin-left: auto;
   padding: 15px;
 }
 
-.add-button:hover {
+.add-button {
+  margin-left: auto;
+}
+
+.add-button:hover,
+.new-review-button:hover {
   background: $gold;
   color: $white;
 }
@@ -45,6 +53,11 @@ $black: #000;
 .bourbons-search-form {
   padding: 15px 0;
   width: 45%;
+}
+
+.bourbon-link {
+  color: $bourbon;
+  font-weight: bold;
 }
 
 #bourbons-search-bar {
@@ -56,4 +69,82 @@ $black: #000;
   background-color: $white;
   border: 3px solid $gold;
   color: $black;
+}
+
+//SHOW PAGE
+//==============================
+
+.bourbon-pic {
+  background-color: $black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 35vh;
+  width: 100%;
+
+  h1, h3, a {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 5vh;
+    color: $white;
+  }
+
+  h3 {
+    font-size: 3.5vh;
+    color: $gold;
+  }
+}
+
+.bourbon-background {
+  background: $bourbon;
+}
+
+.stats-container {
+  color: $white;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 2.5vh 0;
+  text-align: center;
+}
+
+.stats-header {
+  font-size: 2vh;
+}
+
+.stats {
+
+  div {
+    display: table;
+    height: 7vh;
+    vertical-align: middle;
+
+    span {
+      display: table-cell;
+      font-size: 3vh;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+  }
+}
+
+.dbb-rating {
+  color: $gold;
+}
+
+.new-review-button {
+  margin: 2vh auto 0;
+  width: 180px;
+}
+
+.reviews-header {
+  background: $white;
+  font-weight: bold;
+  margin: 3vh 0;
+  text-align: center;
 }
