@@ -1,8 +1,8 @@
 # drink-better-bourbon
 
-![Build Status](https://codeship.com/projects/74ae7e50-952c-0133-86ce-4a53072d6648/status?branch=master)
-![Code Climate](https://codeclimate.com/github/rakkofat/drink-better-bourbon.png)
-![Coverage Status](https://coveralls.io/repos/rakkofat/drink-better-bourbon/badge.png)
+[![Build Status](https://codeship.com/projects/74ae7e50-952c-0133-86ce-4a53072d6648/status?branch=master)
+[![Code Climate](https://codeclimate.com/github/rakkofat/drink-better-bourbon.png)
+[![Coverage Status](https://coveralls.io/repos/rakkofat/drink-better-bourbon/badge.svg?branch=master&service=github)](https://coveralls.io/github/rakkofat/drink-better-bourbon?branch=master)
 
 ## Project Check-list
 * [X] The ability to add an item to be reviewed
