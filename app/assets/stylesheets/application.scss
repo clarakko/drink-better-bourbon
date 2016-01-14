@@ -25,12 +25,36 @@
   font-size: 4vmin;
 }
 
+.left {
+  display: none;
+}
+
+.twitter-follow-button {
+  display: none;
+}
+
+.has-form {
+  display: none;
+}
+
 // MEDIA QUERIES
 //==============================
 
 @media (min-width: 40.063em) {
   .distillery {
     display: table-cell;
+  }
+
+  .left {
+    display: inline;
+    background: black-transparent;
+  }
+
+  .twitter-follow-button {
+    display: inline;
+    position: relative;
+    top: 50%;
+    transform: translateY(100%);
   }
 }
 
@@ -53,6 +77,25 @@
         font-size: 3vw;
       }
     }
+  }
+}
+
+@media (min-width: 64.063em) {
+  .welcome-search-form {
+    display: none;
+  }
+
+  .has-form {
+    display: block;
+  }
+
+  #top-bar-search {
+    display: block;
+  }
+
+  #welcome-search-bar-top {
+    border-radius: 0;
+    width: 20vh;
   }
 }
 

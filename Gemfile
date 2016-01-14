@@ -30,6 +30,8 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'dotenv-rails'
+  gem 'twitter'
+  gem 'omniauth-twitter'
 end
 
 group :development do
