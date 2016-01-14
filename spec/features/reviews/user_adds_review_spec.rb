@@ -3,7 +3,7 @@ require "rails_helper"
 feature 'user creates review', %{
 
   As a user
-  I want to add a review
+  I want receive an email
 
   Acceptance Criteria
   [x] I am not authenticated and I cannot add a review
