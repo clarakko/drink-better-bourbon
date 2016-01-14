@@ -17,7 +17,6 @@ RSpec.configure do |config|
   end
 
   config.before :each do
-	ActionMailer::Base.deliveries.clear
+    ActionMailer::Base.deliveries.clear
   end
-
 end

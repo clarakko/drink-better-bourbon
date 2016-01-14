@@ -77,5 +77,3 @@ feature 'Sends email upon a successful vote', %{
     expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 end
-
-
