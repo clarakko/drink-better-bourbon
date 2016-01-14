@@ -33,7 +33,7 @@ class BourbonsController < ApplicationController
 
     if @bourbon.save
       flash[:notice] = "Bourbon added successfully"
-      $twitter.update("New bourbon added! Check out the review for #{@bourbon.name} at http://drinkbetterbourbon.herokuapp.com/bourbons/#{@bourbon.id}")
+      $twitter.update("New bourbon added! Check out the review for\ #{@bourbon.name} at\ http://drinkbetterbourbon.herokuapp.com/bourbons/#{@bourbon.id}")
       redirect_to bourbon_path(@bourbon)
     else
       flash.now[:errors] = @bourbon.errors.full_messages.join(". ")
