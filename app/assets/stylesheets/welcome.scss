@@ -18,7 +18,7 @@ $black-transparent: rgba(0, 0, 0, 0);
 .welcome-search-form {
   margin: 0 auto;
   position: relative;
-  top: 25%;
+  top: 55%;
 }
 
 .search-button {
@@ -36,11 +36,14 @@ $black-transparent: rgba(0, 0, 0, 0);
 #welcome-search-bar {
   background-color: $black-transparent;
   border: 3px solid $white;
-  border-radius: 15px;
 }
 
 #welcome-search-bar:focus {
   background-color: $white;
   border: 3px solid $gold;
   color: $black;
+}
+
+#top-bar-search {
+  display: none;
 }
