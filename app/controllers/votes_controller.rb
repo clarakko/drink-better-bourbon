@@ -5,6 +5,7 @@ class VotesController < ApplicationController
     if @value.vote == 0 || @value.vote == -1
       @value.vote = 1
       @value.save
+      VoteMailer.up_vote(@review).deliver_later
       flash[:notice] = "Upvoted!"
     elsif @value.vote == 1
       @value.vote -= 1
@@ -18,6 +19,7 @@ class VotesController < ApplicationController
     if @value.vote == 0 || @value.vote == 1
       @value.vote = -1
       @value.save
+      VoteMailer.down_vote(@review).deliver_later
       flash[:notice] = "Downvoted!"
     elsif @value.vote == -1
       @value.vote += 1
