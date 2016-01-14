@@ -6,10 +6,10 @@ class BourbonsController < ApplicationController
   def index
     if params[:search]
       @bourbons = Bourbon.search(params[:search]).
-        order("name").
+        order(:name).
         page(params[:page])
     else
-      @bourbons = Bourbon.order("name").page(params[:page])
+      @bourbons = Bourbon.order(created_at: :desc).page(params[:page])
     end
   end
 
@@ -33,6 +33,7 @@ class BourbonsController < ApplicationController
 
     if @bourbon.save
       flash[:notice] = "Bourbon added successfully"
+      $twitter.update("New bourbon added! Check out the review for #{@bourbon.name} at http://localhost:3000/bourbons/#{@bourbon.id}")
       redirect_to bourbon_path(@bourbon)
     else
       flash.now[:errors] = @bourbon.errors.full_messages.join(". ")

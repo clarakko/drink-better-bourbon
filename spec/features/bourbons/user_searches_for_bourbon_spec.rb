@@ -3,7 +3,7 @@ require 'rails_helper'
 feature "user searches for a bourbon by name", %{
   As a visitor
   I want to use the search bar
-  So I can find the bourbon I'm looking form
+  So I can find the bourbon I'm looking for
 
   Acceptance Criteria:
   - [] I can use the search bar from the welcome page to search bourbons
