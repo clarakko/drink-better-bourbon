@@ -1,14 +1,15 @@
 <h1>Admin Update Bourbon Form</h1>
 
-<%= form_for @bourbon do |f| %>
+<%= form_for @bourbon, url: admin_bourbon_path(@bourbon) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :proof %>
   <%= f.text_field :proof %>
   <%= f.label :distillery %>
   <%= f.text_field :distillery %>
-  <%= f.label :varietal %>
-  <%= f.text_field :varietal %>
+  <%= f.label :bourbon_img, "Bourbon Image" %><br />
+  <%= f.file_field :bourbon_img %>
+  </div>
 
   <%= f.submit "Update Bourbon", class: "button small" %>
 <% end %>

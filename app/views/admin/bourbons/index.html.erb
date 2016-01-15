@@ -1,12 +1,61 @@
-<h1>Bourbon Administration</h1>
+<div class="row">
+  <div class="column small-centered small-12 medium-10 large-8">
+    <h3>Bourbons needing images</h3>
+    <table class="bourbons-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @image_queue.each do |item| %>
+          <tr>
+            <td><%= link_to item.name, item %></td>
+            <%= form_for item, url: admin_bourbon_path(item) do |f| %>
+            <td>
+              <%= f.file_field :bourbon_img %>
+            </td>
+            <td>
+              <%= f.submit "Add Image", class: 'button tiny' %>
+            </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<ul>
-<% @bourbons.each do |bourbon| %>
-  <li>
-    <%= link_to bourbon.name, bourbon_path(bourbon) %>
-    <br>
-    <%= link_to "Update", edit_bourbon_path(bourbon), class: 'button small' %>
-    <%= button_to "Delete Bourbon", admin_bourbon_path(bourbon), method: :delete, class: 'button small' %>
-  </li>
-<% end %>
-</ul>
+<div class="row">
+  <div class="column small-centered small-12 medium-10 large-8">
+    <h3>Update Index</h3>
+    <table class="bourbons-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bourbons.each do |bourbon| %>
+          <tr>
+            <td><%= link_to bourbon.name, bourbon %></td>
+            <td>
+              <%= link_to 'Update', edit_admin_bourbon_path(bourbon),
+                class: 'button tiny' %>
+            </td>
+            <td>
+              <%= button_to 'Delete', admin_bourbon_path(bourbon),
+                method: :delete, class: 'button tiny' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @bourbons %>
+  </div>
+</div>
