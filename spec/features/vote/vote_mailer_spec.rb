@@ -28,7 +28,7 @@ feature 'Sends email upon a successful vote', %{
 
     visit bourbon_path(bourbon)
 
-    click_link 'Upvote'
+    click_link 'Up'
 
     expect(page).to have_content("1")
     expect(ActionMailer::Base.deliveries.count).to eq(1)
@@ -44,7 +44,7 @@ feature 'Sends email upon a successful vote', %{
 
     visit bourbon_path(bourbon)
 
-    click_link 'Downvote'
+    click_link 'Down'
 
     expect(page).to have_content("-1")
     expect(ActionMailer::Base.deliveries.count).to eq(1)
@@ -60,9 +60,9 @@ feature 'Sends email upon a successful vote', %{
 
     visit bourbon_path(bourbon)
 
-    click_link 'Downvote'
+    click_link 'Down'
 
-    click_link 'Downvote'
+    click_link 'Down'
 
     expect(page).to have_content("0")
     expect(ActionMailer::Base.deliveries.count).to eq(1)
@@ -78,9 +78,9 @@ feature 'Sends email upon a successful vote', %{
 
     visit bourbon_path(bourbon)
 
-    click_link 'Upvote'
+    click_link 'Up'
 
-    click_link 'Upvote'
+    click_link 'Up'
 
     expect(page).to have_content("0")
     expect(ActionMailer::Base.deliveries.count).to eq(1)

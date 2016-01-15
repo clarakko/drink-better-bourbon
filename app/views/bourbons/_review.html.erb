@@ -1,0 +1,44 @@
+<% @reviews.each do |review| %>
+  <div class="row review-container">
+    <div class="column review-profile-pic-col hide-for-small-only">
+      <%= image_tag review.user.profile_pic, class: "review-profile-pic" %>
+    </div>
+    <div class="column">
+      <div class="row review-info">
+        <div class="votes">
+          <% if current_user %>
+            <div class="plus-one">
+              <%= link_to "Up", upvote_review_votes_path(review), class: "upvote", remote: true, method: :post %>
+            </div>
+            /
+          <% end %>
+          <div class="total-votes" id="vote-<%=review.id%>">
+            <%= @total_votes[review.id] %>
+          </div>
+          <% if current_user %>
+          /
+            <div class="minus-one">
+              <%= link_to "Down", downvote_review_votes_path(review), class: "downvote", remote: true, method: :post %>
+            </div>
+          <% end %>
+        </div>
+        <h4><span>Reviewer: </span><%= review.user.username %></h4>
+        <h4><span>For: </span><%= link_to review.bourbon.name, bourbon_path(review.bourbon), class: "bourbon-link" %></h4>
+        <h4><span>Rating: </span><%= review.rating %></h4>
+      </div>
+      <div class="row review-body">
+        <p>
+          <%= review.description %>
+        </p>
+        <% if (current_user && review.user == current_user) || (current_user.admin? if current_user) %>
+        <div class="row">
+          <div class="column review-controls">
+            <%= link_to 'Edit', edit_bourbon_review_path(@bourbon, review), class: "button" %>
+            <%= button_to 'Delete', bourbon_review_path(@bourbon, review), class: "button delete-review", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

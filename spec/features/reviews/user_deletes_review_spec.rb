@@ -24,7 +24,7 @@ feature 'user deletes review', %{
 
     visit bourbon_path(bourbon)
 
-    click_link 'New Review'
+    click_link 'Review It'
     fill_in 'Description', with: 'Meh.'
     fill_in 'Rating', with: '42'
     click_button 'Add Review'

@@ -1,7 +1,7 @@
 # drink-better-bourbon
 
-[![Build Status](https://codeship.com/projects/74ae7e50-952c-0133-86ce-4a53072d6648/status?branch=master)
-[![Code Climate](https://codeclimate.com/github/rakkofat/drink-better-bourbon.png)
+![Build Status](https://codeship.com/projects/74ae7e50-952c-0133-86ce-4a53072d6648/status?branch=master)
+![Code Climate](https://codeclimate.com/github/rakkofat/drink-better-bourbon.png)
 [![Coverage Status](https://coveralls.io/repos/rakkofat/drink-better-bourbon/badge.svg?branch=master&service=github)](https://coveralls.io/github/rakkofat/drink-better-bourbon?branch=master)
 
 ## Project Check-list
@@ -24,10 +24,10 @@
 * [X] An admin deletes a user
 * [X] An admin deletes an item
 * [X] An admin deletes a review
-* [ ] Write a user story and acceptance criteria for API feature.
 * [X] Add an API integration that posts activity from your application to another service on the web.
 * [X] Add a search bar that allows users to search for items.
 * [X] Write a user story and acceptance criteria for this search feature.
 * [X] E-mail: Write a user story and acceptance criteria for this feature.
 * [X] Integrate email into your app using ActionMailer. Email the user who posted an item when someone posts a review of that item.
 * [ ] Add photo to new bourbon using Carrierwave.
+* [ ] Style admin 'Update' Button on bourbon show page
