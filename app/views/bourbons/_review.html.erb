@@ -8,7 +8,7 @@
         <div class="votes">
           <% if current_user %>
             <div class="plus-one">
-              <%= link_to "", upvote_review_votes_path(review), class: "upvote", remote: true, method: :post %>
+              <%= link_to "Up", upvote_review_votes_path(review), class: "upvote", remote: true, method: :post %>
             </div>
             /
           <% end %>
@@ -18,7 +18,7 @@
           <% if current_user %>
           /
             <div class="minus-one">
-              <%= link_to "", downvote_review_votes_path(review), class: "downvote", remote: true, method: :post %>
+              <%= link_to "Down", downvote_review_votes_path(review), class: "downvote", remote: true, method: :post %>
             </div>
           <% end %>
         </div>
@@ -28,7 +28,7 @@
       </div>
       <div class="row review-body">
         <p>
-          Bacon ipsum dolor amet dolor cillum pastrami officia ribeye. Nulla adipisicing landjaeger hamburger. Fugiat t-bone commodo dolore leberkas, frankfurter laborum voluptate jowl exercitation sed mollit salami sunt jerky. Salami flank pork, elit incididunt pork loin jerky frankfurter et tenderloin andouille.
+          <%= review.description %>
         </p>
         <% if (current_user && review.user == current_user) || (current_user.admin? if current_user) %>
         <div class="row">

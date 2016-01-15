@@ -22,7 +22,7 @@ feature 'user creates review', %{
     click_button 'Sign In'
 
     visit bourbon_path(bourbon)
-    click_link 'New Review'
+    click_link 'Review It'
   end
 
   scenario "an unauthenticated user cannot add a review" do

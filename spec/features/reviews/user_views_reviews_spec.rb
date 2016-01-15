@@ -25,7 +25,7 @@ feature 'user views review', %{
     review = FactoryGirl.create(:review)
     user1 = FactoryGirl.create(:user)
     visit bourbon_path(bourbon)
-    click_link "New Review"
+    click_link "Review It"
     fill_in 'Description', with: review.description
     fill_in 'Rating', with: review.rating
     click_on 'Add Review'
