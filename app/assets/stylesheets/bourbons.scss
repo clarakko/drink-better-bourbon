@@ -81,25 +81,25 @@ $black-transparent: rgba(0, 0, 0, 0);
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   height: 35vh;
+  justify-content: center;
   width: 100%;
 
   h1,
   h3,
   a {
-    text-align: center;
     font-weight: bold;
+    text-align: center;
   }
 
   h1 {
-    font-size: 5vh;
     color: $white;
+    font-size: 5vh;
   }
 
   h3 {
-    font-size: 3.5vh;
     color: $gold;
+    font-size: 3.5vh;
   }
 }
 
