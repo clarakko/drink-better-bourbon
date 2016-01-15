@@ -30,7 +30,6 @@ feature 'user updates information', %{
   scenario "User changes one field only" do
     fill_in "Email", with: 'jojo@gmail.com'
     fill_in "Current password", with: user.password
-    save_and_open_page
     click_button 'Update'
     expect(page).to have_content('Your account has been updated successfully.')
   end
