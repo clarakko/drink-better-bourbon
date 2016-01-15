@@ -18,6 +18,9 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
+gem 'twitter'
+gem 'omniauth-twitter'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-rails'
@@ -29,9 +32,6 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'byebug'
   gem 'quiet_assets'
-  gem 'dotenv-rails'
-  gem 'twitter'
-  gem 'omniauth-twitter'
 end
 
 group :development do
