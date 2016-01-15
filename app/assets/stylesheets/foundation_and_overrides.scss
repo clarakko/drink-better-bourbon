@@ -1,4 +1,6 @@
 $gold: #f8a803;
+@import url(https://fonts.googleapis.com/css?family=Noticia+Text:400,700|Volkhov:400,400italic,700|Vollkorn:400,700);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
 
 // Foundation by ZURB
 // foundation.zurb.com
@@ -89,9 +91,9 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-// $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-// $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-// $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+$font-family-sans-serif: 'Vollkorn', serif;;
+$font-family-serif: 'Volkhov', serif;;
+$font-family-monospace: 'Droid Sans Mono', sans-serif;
 
 // We use these to define default font weights
 // $font-weight-normal: normal;
