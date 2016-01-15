@@ -33,7 +33,7 @@ feature 'Sends email upon a successful vote', %{
     fill_in "Distillery", with: "Louisville Distilling Co."
     click_button "Add Bourbon"
 
-    click_link "New Review"
+    click_link "Review It"
     fill_in "Description", with: "thing"
     fill_in "Rating", with: "9"
     click_button "Add Review"
@@ -43,7 +43,7 @@ feature 'Sends email upon a successful vote', %{
 
   scenario "user upvotes a review", js: true do
     ActionMailer::Base.deliveries = []
-    click_link "Upvote"
+    click_link "Up"
 
     expect(page).to have_content ("1")
     expect(ActionMailer::Base.deliveries.count).to eq(1)
@@ -51,7 +51,7 @@ feature 'Sends email upon a successful vote', %{
 
   scenario "user downvotes a review", js: true do
     ActionMailer::Base.deliveries = []
-    click_link "Downvote"
+    click_link "Down"
 
     expect(page).to have_content ("-1")
     expect(ActionMailer::Base.deliveries.count).to eq(1)
@@ -59,9 +59,9 @@ feature 'Sends email upon a successful vote', %{
 
   scenario "user cancels a downvote", js: true do
     ActionMailer::Base.deliveries = []
-    click_link "Downvote"
+    click_link "Down"
 
-    click_link "Downvote"
+    click_link "Down"
 
     expect(page).to have_content ("0")
     expect(ActionMailer::Base.deliveries.count).to eq(1)
@@ -69,9 +69,9 @@ feature 'Sends email upon a successful vote', %{
 
   scenario "user cancels an upvote", js: true do
     ActionMailer::Base.deliveries = []
-    click_link "Upvote"
+    click_link "Up"
 
-    click_link "Upvote"
+    click_link "Up"
 
     expect(page).to have_content ("0")
     expect(ActionMailer::Base.deliveries.count).to eq(1)

@@ -28,11 +28,11 @@ feature 'user updates review', %{
 
   scenario "a user updates a review" do
     review = FactoryGirl.create(:review)
-    click_link "New Review"
+    click_link "Review It"
     fill_in 'Description', with: review.description
     fill_in 'Rating', with: review.rating
     click_on 'Add Review'
-    click_link "Update Review"
+    click_link "Edit"
     fill_in 'Description', with: "Different Review"
     fill_in 'Rating', with: "99"
     click_button "Update Review"
@@ -42,11 +42,11 @@ feature 'user updates review', %{
 
   scenario "a user cancels update review" do
     review = FactoryGirl.create(:review)
-    click_link "New Review"
+    click_link "Review It"
     fill_in 'Description', with: review.description
     fill_in 'Rating', with: review.rating
     click_on 'Add Review'
-    click_link "Update Review"
+    click_link "Edit"
     click_link "Cancel"
     expect(page).to have_content(review.description)
   end

@@ -1,0 +1,99 @@
+$gold: #f8a803;
+$bourbon: #9c2706;
+$white: #fff;
+$black: #000;
+$black-transparent: rgba(0, 0, 0, 0);
+
+.review-container {
+  border-bottom: 2px solid $black;
+  display: flex;
+  margin-bottom: 2vh;
+  max-width: 800px;
+  padding: 0 2vw;
+}
+
+.review-profile-pic-col {
+  margin-right: 10px;
+  padding: 0;
+  width: 120px;
+}
+
+.review-profile-pic {
+  height: 100px;
+  width: 100px;
+}
+
+.review-info {
+  h4 {
+    font-size: 18px;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.review-body {
+  text-align: justify;
+}
+
+.bourbon-link {
+  color: $bourbon;
+}
+
+.votes {
+  float: right;
+  margin-top: 5px;
+
+  div {
+    display: inline-block;
+  }
+}
+
+.plus-one,
+.minus-one,
+.total-votes {
+  font-size: 1.25rem;
+  text-align: center;
+
+  a {
+    color: $black;
+    padding: 7px;
+  }
+}
+
+.plus-one,
+.minus-one {
+  height: 40px;
+  line-height: 35px;
+  text-align: center;
+  width: 32px;
+
+  a {
+    color: transparent;
+  }
+}
+
+.plus-one {
+  background-image: image-url("flask-up.png");
+  background-size: cover;
+}
+
+.minus-one {
+  background-image: image-url("flask-down.png");
+  background-size: cover;
+}
+
+.total-votes {
+  height: 30px;
+  line-height: 28px;
+  width: 30px;
+}
+
+.review-controls {
+  display: flex;
+}
+
+.delete-review {
+  margin-left: 20px;
+}

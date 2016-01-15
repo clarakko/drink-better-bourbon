@@ -34,7 +34,7 @@ feature 'user votes', %{
     fill_in "Distillery", with: "Louisville Distilling Co."
     click_button "Add Bourbon"
 
-    click_link "New Review"
+    click_link "Review It"
     fill_in "Description", with: "thing"
     fill_in "Rating", with: "9"
     click_button "Add Review"
@@ -43,27 +43,27 @@ feature 'user votes', %{
   let!(:bourbon) { FactoryGirl.create(:bourbon) }
 
   scenario "user upvotes a review", js: true do
-    click_link "Upvote"
+    click_link "Up"
 
     expect(page).to have_content ("1")
   end
 
   scenario "user downvotes a review", js: true do
-    click_link "Downvote"
+    click_link "Down"
 
     expect(page).to have_content ("-1")
   end
 
   scenario "user cancels upvote", js: true do
-    click_link "Upvote"
-    click_link "Upvote"
+    click_link "Up"
+    click_link "Up"
 
     expect(page).to have_content ("0")
   end
 
   scenario "user cancels downvote", js: true do
-    click_link "Downvote"
-    click_link "Downvote"
+    click_link "Down"
+    click_link "Down"
 
     expect(page).to have_content ("0")
   end

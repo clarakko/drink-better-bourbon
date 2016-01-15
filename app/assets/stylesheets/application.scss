@@ -14,6 +14,7 @@
  *= require_self
  *= require foundation_and_overrides
  */
+ // @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 .full-width {
   margin: 0 auto;
@@ -22,7 +23,7 @@
 }
 
 .top-bar-section ul li a {
-  font-size: 4vmin;
+  font-size: 1.25rem;
 }
 
 .left {
@@ -60,7 +61,23 @@
 
 @media (min-width: 40.063em) and (max-width: 64em) {
   .top-bar-section ul li a {
-    font-size: 2.8vmin;
+    font-size: 1.25rem;
+  }
+}
+
+@media handheld and (orientation: landscape) {
+  .stats-header {
+    font-size: 2vw;
+  }
+
+  .stats {
+    div {
+      height: 7vw;
+
+      span {
+        font-size: 3vw;
+      }
+    }
   }
 }
 
@@ -85,12 +102,20 @@
 
 @media (min-width: 64.063em) and (max-width: 90em) {
   .top-bar-section ul li a {
-    font-size: 2.5vmin;
+    font-size: 1.25rem;
+  }
+
+  .bourbon-pic {
+    height: 40vh;
   }
 }
 
 @media (min-width: 90.063em) {
   .top-bar-section ul li a {
-    font-size: 2vmin;
+    font-size: 1.25rem;
+  }
+
+  .bourbon-pic {
+    height: 45vh;
   }
 }

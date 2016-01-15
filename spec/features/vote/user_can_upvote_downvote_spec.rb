@@ -38,11 +38,11 @@ feature 'user votes', %{
 
     visit bourbon_path(bourbon)
 
-    click_link "New Review"
+    click_link "Review It"
     fill_in "Description", with: review.description
     fill_in "Rating", with: review.rating
     click_button "Add Review"
-    click_link "Upvote"
+    click_link "Up"
 
     expect(page).to have_content ("Upvoted!")
   end
@@ -56,11 +56,11 @@ feature 'user votes', %{
 
     visit bourbon_path(bourbon)
 
-    click_link "New Review"
+    click_link "Review It"
     fill_in "Description", with: review.description
     fill_in "Rating", with: review.rating
     click_button "Add Review"
-    click_link "Downvote"
+    click_link "Down"
 
     expect(page).to have_content ("Downvoted!")
   end
@@ -74,12 +74,12 @@ feature 'user votes', %{
 
     visit bourbon_path(bourbon)
 
-    click_link "New Review"
+    click_link "Review It"
     fill_in "Description", with: review.description
     fill_in "Rating", with: review.rating
     click_button "Add Review"
-    click_link "Upvote"
-    click_link "Upvote"
+    click_link "Up"
+    click_link "Up"
 
     expect(page).to have_content ("Upvote cancelled!")
   end
@@ -93,12 +93,12 @@ feature 'user votes', %{
 
     visit bourbon_path(bourbon)
 
-    click_link "New Review"
+    click_link "Review It"
     fill_in "Description", with: review.description
     fill_in "Rating", with: review.rating
     click_button "Add Review"
-    click_link "Downvote"
-    click_link "Downvote"
+    click_link "Down"
+    click_link "Down"
 
     expect(page).to have_content ("Downvote cancelled!")
   end
@@ -106,11 +106,11 @@ feature 'user votes', %{
   scenario "unauthenticated user does not see upvote" do
     visit bourbon_path(bourbon)
 
-    expect(page).to_not have_content("Upvote")
+    expect(page).to_not have_content("Up")
   end
   scenario "unauthenticated user does not see downvote" do
     visit bourbon_path(bourbon)
 
-    expect(page).to_not have_content("Downvote")
+    expect(page).to_not have_content("Down")
   end
 end
