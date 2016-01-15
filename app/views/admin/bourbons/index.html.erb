@@ -15,7 +15,7 @@
             <td><%= link_to item.name, item %></td>
             <%= form_for item, url: admin_bourbon_path(item) do |f| %>
             <td>
-              <%= f.file_field :bourbon_img, class: 'button tiny' %>
+              <%= f.file_field :bourbon_img %>
             </td>
             <td>
               <%= f.submit "Add Image", class: 'button tiny' %>
@@ -44,10 +44,12 @@
           <tr>
             <td><%= link_to bourbon.name, bourbon %></td>
             <td>
-              <%= link_to 'Update', edit_admin_bourbon_path(bourbon), class: 'button tiny' %>
+              <%= link_to 'Update', edit_admin_bourbon_path(bourbon),
+                class: 'button tiny' %>
             </td>
             <td>
-              <%= button_to 'Delete', admin_bourbon_path(bourbon), method: :delete %>
+              <%= button_to 'Delete', admin_bourbon_path(bourbon),
+                method: :delete, class: 'button tiny' %>
             </td>
           </tr>
         <% end %>
