@@ -9,6 +9,9 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+    <style media="screen">
+      .bourbon_back { background-image: url(<%= @bourbon.bourbon_img if @bourbon %>); }
+    </style>
   </head>
 
   <body>
