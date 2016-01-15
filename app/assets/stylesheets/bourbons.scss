@@ -33,8 +33,7 @@ $black-transparent: rgba(0, 0, 0, 0);
   display: none;
 }
 
-.add-button,
-.new-review-button {
+.add-button {
   background: $black;
   color: $white;
   padding: 15px;
@@ -139,9 +138,11 @@ $black-transparent: rgba(0, 0, 0, 0);
   color: $gold;
 }
 
-.new-review-button {
-  margin: 2vh auto 0;
-  width: 180px;
+.bourbon-show-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
 }
 
 .reviews-header {
