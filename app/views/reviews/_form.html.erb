@@ -1,7 +1,7 @@
 <%= form_for [@bourbon, @review] do |f| %>
   <%= f.label :description%>
-  <%= f.text_field :description %>
-  <%= f.label :rating %>
+  <%= f.text_area :description, rows: "12" %>
+  <%= f.label :rating, "Rating (1-100)" %>
   <%= f.text_field :rating %>
 
   <% if @review.persisted? %>

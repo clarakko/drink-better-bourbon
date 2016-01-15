@@ -29,7 +29,6 @@ feature 'Sends email upon a successful vote', %{
 
     fill_in "Name", with: "Angel's Envy"
     fill_in "Proof", with: "99"
-    fill_in "Varietal", with: "Blended"
     fill_in "Distillery", with: "Louisville Distilling Co."
     click_button "Add Bourbon"
 

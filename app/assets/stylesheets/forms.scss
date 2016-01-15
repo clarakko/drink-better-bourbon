@@ -1,0 +1,25 @@
+$gold: #f8a803;
+$bourbon: #9c2706;
+$white: #fff;
+$black: #000;
+$black-transparent: rgba(0, 0, 0, 0);
+
+.crud-forms {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 2vw;
+}
+
+.edit-user-wrapper {
+  border-bottom: 3px solid $black;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+}
+
+.profile-pic-wrapper {
+  margin: 20px 0;
+}
+
+.devise-shared-links {
+  margin-top: 20px;
+}

@@ -2,9 +2,14 @@
   <div class="bourbon-pic bourbon_back">
     <h1><%= @bourbon.name %></h1>
     <h3><%= @bourbon.distillery %></h3>
-    <% if current_user %>
-      <%= link_to "Review It", new_bourbon_review_path(@bourbon, @review), class: "new-review-button" %>
-    <% end %>
+    <div class="bourbon-show-buttons-container">
+      <% if current_user %>
+        <%= link_to "Review It", new_bourbon_review_path(@bourbon, @review), class: "new-review-button button" %>
+      <% end %>
+      <% if (@bourbon.user == current_user && current_user) || (current_user.admin? if current_user) %>
+        <%= link_to "Update", edit_bourbon_path, class: "bourbon-update-button button" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -38,10 +43,6 @@
     </div>
   </div>
 </div>
-
-<% if (@bourbon.user == current_user && current_user) || (current_user.admin? if current_user) %>
-  <%= link_to "Update", edit_bourbon_path %>
-<% end %>
 
 <h3 class="reviews-header">Reviews</h2>
 

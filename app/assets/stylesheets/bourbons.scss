@@ -3,6 +3,7 @@ $bourbon: #9c2706;
 $white: #fff;
 $black: #000;
 $black-transparent: rgba(0, 0, 0, 0);
+$pop-green: #09c789;
 
 //INDEX PAGE
 //==============================
@@ -33,8 +34,7 @@ $black-transparent: rgba(0, 0, 0, 0);
   display: none;
 }
 
-.add-button,
-.new-review-button {
+.add-button {
   background: $black;
   color: $white;
   padding: 15px;
@@ -70,6 +70,24 @@ $black-transparent: rgba(0, 0, 0, 0);
   border: 3px solid $gold;
   color: $black;
 }
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 30px;
+
+  span {
+    color: $gold;
+    font-weight: 700;
+    margin: 0 5px;
+
+    a {
+      color: $black;
+      font-weight: 400;
+    }
+  }
+}
+
 
 //SHOW PAGE
 //==============================
@@ -139,9 +157,15 @@ $black-transparent: rgba(0, 0, 0, 0);
   color: $gold;
 }
 
-.new-review-button {
-  margin: 2vh auto 0;
-  width: 180px;
+.bourbon-show-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+
+  a.bourbon-update-button {
+    margin-left: 1vw;
+  }
 }
 
 .reviews-header {
