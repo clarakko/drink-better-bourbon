@@ -4,11 +4,10 @@
   <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
 
 </ul>
-
 <section class="top-bar-section">
   <ul class="left">
     <a
-      href="https://twitter.com/betterbourbon" class="twitter-follow-button" data-show-count="false">
+      href="https://twitter.com/betterbourbon" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">
     </a>
   </ul>
   <ul class="right">
@@ -30,6 +29,9 @@
       <li class="has-dropdown">
       <%= link_to current_user.username, '#' %>
       <ul class="dropdown">
+        <% if current_user.admin? %>
+          <li><%= link_to 'Admin', admin_bourbons_path %></li>
+        <% end %>
         <li><%= link_to 'Settings', edit_user_registration_path %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       </ul>
