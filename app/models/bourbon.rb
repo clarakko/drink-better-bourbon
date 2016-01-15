@@ -11,6 +11,8 @@ class Bourbon < ActiveRecord::Base
     less_than_or_equal_to: 200 }
   validates :proof, length: { maximum: 4 }
 
+  mount_uploader :bourbon_img, BourbonImgUploader
+
   def self.search(query)
     where("name like ?", "%#{query}%")
   end
