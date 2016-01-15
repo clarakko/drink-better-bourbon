@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_sign_in_path_for
+  def after_sign_in_path_for(_resource)
     bourbons_path(current_user)
   end
 
