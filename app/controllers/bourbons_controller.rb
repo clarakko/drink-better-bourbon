@@ -65,7 +65,7 @@ class BourbonsController < ApplicationController
 
   def bourbon_params
     params.require(:bourbon).permit(
-      :user, :name, :proof, :distillery, :varietal)
+      :user, :name, :proof, :distillery, :varietal, :bourbon_img)
   end
 
   def authorize_user!
