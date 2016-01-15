@@ -34,7 +34,6 @@ feature "The bourbon add page: ", %{
 
     fill_in "Name", with: "Angel's Envy"
     fill_in "Proof", with: "80.6"
-    fill_in "Varietal", with: "Blended"
     fill_in "Distillery", with: "Louisville Distilling Co."
     click_button "Add Bourbon"
     expect(page).to have_content "Bourbon added successfully"
@@ -55,7 +54,6 @@ feature "The bourbon add page: ", %{
 
     fill_in "Name", with: "Angel's Envy"
     fill_in "Proof", with: "80.6"
-    fill_in "Varietal", with: "Blended"
     fill_in "Distillery", with: "Louisville Distilling Co."
     click_button "Add Bourbon"
 
@@ -63,7 +61,6 @@ feature "The bourbon add page: ", %{
 
     fill_in "Name", with: "Angel's Envy"
     fill_in "Proof", with: "80.6"
-    fill_in "Varietal", with: "Blended"
     fill_in "Distillery", with: "Louisville Distilling Co."
     click_button "Add Bourbon"
   end
